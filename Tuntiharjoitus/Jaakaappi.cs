@@ -21,22 +21,21 @@ namespace JAMK.IT
         {
             string tila, tila2;
 
-            if (OnkoPaalla == true)                         // Jos virta on päällä
+            if (OnkoPaalla == true)     // Jos virta on päällä sekä ovi kiinni --> kaikki ok
             {
                 tila = "päällä";
+                Lampotila = 10;
             }
             else
             {
                 Lampotila += 5;
                 tila = "pois päältä";
-                Console.WriteLine("Laita virrat päälle ettei ruuat mene pilalle!");
             }
 
-            if (OviAuki == true)                            // Jos jääkaapin ovi on auki
+            if (OviAuki == true)      // Jos jääkaapin ovi on auki sekä virrat päällä
             {
                 tila2 = "auki";
                 Lampotila += 5;
-                Console.WriteLine("Sulje ovi ettei ruuat mene pilalle!");
             }
             else
             {
@@ -52,8 +51,8 @@ namespace JAMK.IT
             Console.WriteLine("***********************************");
             Console.WriteLine("Jääkaapin tila: {0}", tila);
             Console.WriteLine("Oven tila: {0}", tila2);
-            Console.WriteLine("Täyttöaste: {0}", Tayttoaste);
-            Console.WriteLine("Lämpötila: {0}", Lampotila);
+            Console.WriteLine("Täyttöaste: {0} %", Tayttoaste);
+            Console.WriteLine("Lämpötila: {0} celsiusta", Lampotila);
             Console.WriteLine("***********************************");
         }
 

@@ -15,12 +15,12 @@ namespace Tuntiharjoitukset
     {
         static void Main(string[] args)
         {
-            //TestaaKiuas();            // tehty
-            //TestaaPesukone();         // VAIHEESSA
-            //TestaaTelevisio();        // tehty
-            //TestaaVehicle();          // tehty
-            TestaaOpiskelija();       // VAIHEESSA
-            //TestaaJaakaappi();        // VAIHEESSA
+            //TestaaKiuas();            // Tehtävä 1 - tehty
+            //TestaaPesukone();         // Tehtävä 2 - VAIHEESSA
+            //TestaaTelevisio();        // Tehtävä 3 - tehty
+            //TestaaVehicle();          // Tehtävä 4 - tehty
+            //TestaaOpiskelija();       // Tehtävä 5 - tehty
+            //TestaaJaakaappi();        // Tehtävä 6 - tehty
         }
 
         /**********************************************
@@ -104,7 +104,7 @@ namespace Tuntiharjoitukset
         {
             Opiskelija[] opiskelija = new Opiskelija[5];
 
-            for (int i = 0; i <= 5; i++)                // Alustetaan taulukko
+            for (int i = 0; i < 5; i++)                // Alustetaan taulukko
                 {
                     opiskelija[i] = new Opiskelija();
             }
@@ -141,24 +141,25 @@ namespace Tuntiharjoitukset
             opiskelija[4].Puhelinnumero = "045 908 4539";
             opiskelija[4].Kurssit = "Elektroniikka, Sähkövoimatekniikka, Piirien käristäminen";
 
-             Console.Clear();
-             for (int i = 0; i <= opiskelija.Length; i++)
-             { opiskelija[i].Tulosta(); }
+            Console.Clear();
+            for (int i = 0; i < 5; i++)
+            { opiskelija[i].Tulosta(); }
 
-             opiskelija[1].VaihdaNimi();
-             opiskelija[1].VaihdaOsoite();
-             opiskelija[1].VaihdaPuhelinnumero();
-             opiskelija[1].LisaaKurssi();
+            Console.WriteLine("Minkä opiskelijan tietoja muutetaan? (0-4)");
+            int muutos = int.Parse(Console.ReadLine());
 
-             Console.Clear();
-             for (int i = 0; i < 5; i++)
-             { opiskelija[i].Tulosta(); }
+            opiskelija[muutos].VaihdaNimi();
+            opiskelija[muutos].VaihdaOsoite();
+            opiskelija[muutos].VaihdaPuhelinnumero();
 
-             opiskelija[1].LisaaKurssi();
+            opiskelija[muutos].Tulosta();
 
-             Console.Clear();
-             for (int i = 0; i < 5; i++)
-             { opiskelija[i].Tulosta(); }
+            Console.WriteLine("Mille opiskelijalle lisätään kurssi? (0-4)");
+            muutos = int.Parse(Console.ReadLine());
+            opiskelija[muutos].LisaaKurssi();
+
+            Console.WriteLine("Tiedot päivitetty!");
+            opiskelija[muutos].Tulosta();
         }
 
         /**********************************************
@@ -168,8 +169,8 @@ namespace Tuntiharjoitukset
         {
             Jaakaappi jaakaappi = new Jaakaappi();
 
-            jaakaappi.OnkoPaalla = true;
-            jaakaappi.OviAuki = false;
+            jaakaappi.OnkoPaalla = true;        // Jääkaappi on päällä
+            jaakaappi.OviAuki = false;          // Ovi on kiinni
             jaakaappi.Lampotila = 10;
             jaakaappi.Tayttoaste = 60;
 
@@ -181,10 +182,17 @@ namespace Tuntiharjoitukset
             jaakaappi.SyoRuokaa();
             jaakaappi.Tulosta();
 
-            jaakaappi.OviAuki = true;
+            Console.WriteLine("AVATAAN JÄÄKAAPIN OVI - lämpö nousee");
+            jaakaappi.OviAuki = true;           // Jääkaapin ovi on auki
             jaakaappi.Tulosta();
 
-            jaakaappi.OnkoPaalla = false;
+            Console.WriteLine("JÄÄKAAPISTA VIRRAT POIS PÄÄLTÄ - ruuat meni pilalle ja lämpötila = huoneenlämpö");
+            jaakaappi.OnkoPaalla = false;       // Jääkaappi ei ole päällä
+            jaakaappi.Tulosta();
+
+            Console.WriteLine("JÄÄKAAPIN OVI ON TAAS KIINNI JA VIRRAT PÄÄLLÄ - lämpötila palautuu, mutta ruuat eivät");
+            jaakaappi.OviAuki = false;          // Ovi on taas kiinni 
+            jaakaappi.OnkoPaalla = true;        // Jääkaappi on taas päällä
             jaakaappi.Tulosta();
         }
     }

@@ -20,6 +20,7 @@ namespace JAMK.IT
 
         public void Tulosta()
         {
+            Console.WriteLine("********************************************************");
             Console.WriteLine("OPISKELIJAN TIEDOT");
             Console.WriteLine("Nimi: {0}, opiskelijanumero: {1}", Nimi, Opiskelijanumero);
             Console.WriteLine("Osoite: {0}", Osoite);
