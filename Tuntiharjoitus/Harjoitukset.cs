@@ -16,10 +16,11 @@ namespace Tuntiharjoitukset
         static void Main(string[] args)
         {
             //TestaaKiuas();            // tehty
-            //TestaaPesukone();
+            //TestaaPesukone();         // VAIHEESSA
             //TestaaTelevisio();        // tehty
             //TestaaVehicle();          // tehty
-            TestaaOpiskelija();       // 
+            TestaaOpiskelija();       // VAIHEESSA
+            //TestaaJaakaappi();        // VAIHEESSA
         }
 
         /**********************************************
@@ -103,6 +104,11 @@ namespace Tuntiharjoitukset
         {
             Opiskelija[] opiskelija = new Opiskelija[5];
 
+            for (int i = 0; i <= 5; i++)                // Alustetaan taulukko
+                {
+                    opiskelija[i] = new Opiskelija();
+            }
+
             // Luodaan 5 testiopiskelijaa taulukkoon
 
             opiskelija[0].Nimi = "Erkki Erämies";
@@ -153,6 +159,33 @@ namespace Tuntiharjoitukset
              Console.Clear();
              for (int i = 0; i < 5; i++)
              { opiskelija[i].Tulosta(); }
+        }
+
+        /**********************************************
+        *     Tehtävä 6 - Jaakaappi-luokan testaus    *
+        **********************************************/
+        static void TestaaJaakaappi()
+        {
+            Jaakaappi jaakaappi = new Jaakaappi();
+
+            jaakaappi.OnkoPaalla = true;
+            jaakaappi.OviAuki = false;
+            jaakaappi.Lampotila = 10;
+            jaakaappi.Tayttoaste = 60;
+
+            jaakaappi.Tulosta();
+
+            jaakaappi.OstaRuokaa();
+            jaakaappi.Tulosta();
+
+            jaakaappi.SyoRuokaa();
+            jaakaappi.Tulosta();
+
+            jaakaappi.OviAuki = true;
+            jaakaappi.Tulosta();
+
+            jaakaappi.OnkoPaalla = false;
+            jaakaappi.Tulosta();
         }
     }
 }
