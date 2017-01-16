@@ -10,7 +10,7 @@ using System;
 
 namespace JAMK.IT
 {
-    public class Kiuas
+    public class Pesukone
     {
         public bool OnkoPaalla { get; set; }
         public float Lampotila { get; set; }
@@ -27,7 +27,7 @@ namespace JAMK.IT
                     kosteus = 0;
                 }
             }
-        }     
+        }
 
     }
 }

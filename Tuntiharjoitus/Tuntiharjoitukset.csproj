@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Harjoitukset.cs" />
     <Compile Include="Kiuas.cs" />
+    <Compile Include="Pesukone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -15,7 +15,8 @@ namespace Tuntiharjoitukset
     {
         static void Main(string[] args)
         {
-            TestaaKiuas();
+            // TestaaKiuas();
+            TestaaPesukone();
         }
         static void TestaaKiuas()       // Tehtävä 1 - Kiuas-luokan testaus
         {
@@ -28,6 +29,15 @@ namespace Tuntiharjoitukset
             Console.WriteLine("Kiuas on päällä {0}", kiuas.OnkoPaalla);     // Tulostetaan tiedot näytölle
             Console.WriteLine("Kiuakaan lämpötila {0}", kiuas.Lampotila);
             Console.WriteLine("Kiukaan kosteus {0}", kiuas.Ilmankosteus);
+
+            kiuas.Ilmankosteus = 101;   // Testatataan ilmankosteutta, asetetaan yli raja-arvon
+
+            Console.WriteLine("Kiukaan kosteus {0}", kiuas.Ilmankosteus);
+        }
+
+        static void TestaaPesukone()    // Tehtävä 2 - Pesukone-luokan testaus
+        {
+
         }
     }
 }
