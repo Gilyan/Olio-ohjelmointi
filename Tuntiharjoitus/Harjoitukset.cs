@@ -15,10 +15,16 @@ namespace Tuntiharjoitukset
     {
         static void Main(string[] args)
         {
-            // TestaaKiuas();
-            TestaaPesukone();
+            //TestaaKiuas();            // tehty
+            //TestaaPesukone();
+            TestaaTelevisio();
+            //TestaaVehicle();          // tehty
         }
-        static void TestaaKiuas()       // Tehtävä 1 - Kiuas-luokan testaus
+
+        /**********************************************
+        *      Tehtävä 1 - Kiuas-luokan testaus       *
+        **********************************************/
+        static void TestaaKiuas()
         {
             Kiuas kiuas = new Kiuas();  // Luodaan Kiuas-olio
 
@@ -35,9 +41,58 @@ namespace Tuntiharjoitukset
             Console.WriteLine("Kiukaan kosteus {0}", kiuas.Ilmankosteus);
         }
 
-        static void TestaaPesukone()    // Tehtävä 2 - Pesukone-luokan testaus
+        /**********************************************
+        *     Tehtävä 2 - Pesukone-luokan testaus     *
+        **********************************************/
+        static void TestaaPesukone()
         {
 
+        }
+
+        /*********************************************
+        *    Tehtävä 3 - Televisio-luokan testaus    *
+        **********************************************/
+        static void TestaaTelevisio()
+        {
+            Televisio televisio = new Televisio();          // Luodaan Televisio-olio
+
+            televisio.OnkoPaalla = true;                    // Laitetaan tv päälle
+            televisio.Kanava = 3;                           // Asetetaan kanava
+            televisio.Aanenvoimakkuus = 20;                 // Asetetaan äänenvoimakkuus
+
+            televisio.PrintData();
+
+            televisio.VaihdaKanavaa();                      // Vaihdetaan kanavaa
+
+            televisio.LisaaAanta();                         // Lisää äänenvoimakkuutta yhdellä
+
+            televisio.PrintData();
+
+            televisio.VahennaAanta();                       // Vähentää äänenvoimakkuutta yhdellä
+            televisio.VahennaAanta();
+            televisio.VahennaAanta();
+            televisio.VahennaAanta();
+
+            televisio.PrintData();
+
+            televisio.SuljeTV();                            // Suljetaan TV
+            televisio.PrintData();
+        }
+
+        /**********************************************
+        *      Tehtävä 4 - Vehicle-luokan testaus     *
+        **********************************************/      
+        static void TestaaVehicle()     
+        {
+            Vehicle Jagulaari = new Vehicle();
+
+            Jagulaari.Name = "Jaguar";
+            Jagulaari.Speed = 200;
+            Jagulaari.Color = "Red";
+
+            Jagulaari.PrintData();
+
+            Console.WriteLine(Jagulaari.ToString());
         }
     }
 }

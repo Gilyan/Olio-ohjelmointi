@@ -47,6 +47,8 @@
     <Compile Include="Kiuas.cs" />
     <Compile Include="Pesukone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Televisio.cs" />
+    <Compile Include="Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
