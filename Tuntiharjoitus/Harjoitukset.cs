@@ -182,7 +182,7 @@ namespace Tuntiharjoitukset
             jaakaappi.SyoRuokaa();
             jaakaappi.Tulosta();
 
-            Console.WriteLine("AVATAAN JÄÄKAAPIN OVI - lämpö nousee");
+            Console.WriteLine("AVATAAN JÄÄKAAPIN OVI - lämpö nousee 5 astetta");
             jaakaappi.OviAuki = true;           // Jääkaapin ovi on auki
             jaakaappi.Tulosta();
 
@@ -190,9 +190,16 @@ namespace Tuntiharjoitukset
             jaakaappi.OnkoPaalla = false;       // Jääkaappi ei ole päällä
             jaakaappi.Tulosta();
 
-            Console.WriteLine("JÄÄKAAPIN OVI ON TAAS KIINNI JA VIRRAT PÄÄLLÄ - lämpötila palautuu, mutta ruuat eivät");
+            Console.WriteLine("JÄÄKAAPIN OVI ON TAAS KIINNI JA VIRRAT PÄÄLLÄ");
             jaakaappi.OviAuki = false;          // Ovi on taas kiinni 
             jaakaappi.OnkoPaalla = true;        // Jääkaappi on taas päällä
+            jaakaappi.Tulosta();
+
+            Console.WriteLine("VÄHENNETÄÄN LÄMPÖÄ");
+            jaakaappi.VahennaLampoa();
+            jaakaappi.VahennaLampoa();
+            jaakaappi.VahennaLampoa();
+            jaakaappi.VahennaLampoa();
             jaakaappi.Tulosta();
         }
     }

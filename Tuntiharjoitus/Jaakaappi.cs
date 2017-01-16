@@ -21,10 +21,9 @@ namespace JAMK.IT
         {
             string tila, tila2;
 
-            if (OnkoPaalla == true)     // Jos virta on päällä sekä ovi kiinni --> kaikki ok
+            if (OnkoPaalla == true)     // Jos virta on päällä
             {
                 tila = "päällä";
-                Lampotila = 10;
             }
             else
             {
@@ -32,7 +31,7 @@ namespace JAMK.IT
                 tila = "pois päältä";
             }
 
-            if (OviAuki == true)      // Jos jääkaapin ovi on auki sekä virrat päällä
+            if (OviAuki == true)      // Jos jääkaapin ovi on auki
             {
                 tila2 = "auki";
                 Lampotila += 5;
@@ -58,12 +57,9 @@ namespace JAMK.IT
 
         public void VahennaLampoa()
         {
-            Lampotila -= 1;
-        }
-
-        public void LisaaLampoa()
-        {
-            Lampotila += 1;
+            if (OnkoPaalla == true && OviAuki == false)
+            { Lampotila -= 1; }
+            else { Console.WriteLine("Tarkistathan, että jääkaapin ovi on kiinni sekä virta päällä."); }
         }
 
         public void OstaRuokaa()
