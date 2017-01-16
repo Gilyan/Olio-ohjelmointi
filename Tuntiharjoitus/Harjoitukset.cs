@@ -17,8 +17,9 @@ namespace Tuntiharjoitukset
         {
             //TestaaKiuas();            // tehty
             //TestaaPesukone();
-            TestaaTelevisio();
+            //TestaaTelevisio();        // tehty
             //TestaaVehicle();          // tehty
+            TestaaOpiskelija();       // 
         }
 
         /**********************************************
@@ -84,15 +85,74 @@ namespace Tuntiharjoitukset
         **********************************************/      
         static void TestaaVehicle()     
         {
-            Vehicle Jagulaari = new Vehicle();
+            Vehicle jagulaari = new Vehicle();
 
-            Jagulaari.Name = "Jaguar";
-            Jagulaari.Speed = 200;
-            Jagulaari.Color = "Red";
+            jagulaari.Name = "Jaguar";
+            jagulaari.Speed = 200;
+            jagulaari.Color = "Red";
 
-            Jagulaari.PrintData();
+            jagulaari.PrintData();
 
-            Console.WriteLine(Jagulaari.ToString());
+            Console.WriteLine(jagulaari.ToString());
+        }
+
+        /**********************************************
+        *    Tehtävä 5 - Opiskelija-luokan testaus    *
+        **********************************************/
+        static void TestaaOpiskelija()
+        {
+            Opiskelija[] opiskelija = new Opiskelija[5];
+
+            // Luodaan 5 testiopiskelijaa taulukkoon
+
+            opiskelija[0].Nimi = "Erkki Erämies";
+            opiskelija[0].Opiskelijanumero = "S1234";
+            opiskelija[0].Osoite = "Maantie 1, 12345 Jontikka";
+            opiskelija[0].Puhelinnumero = "040 123 4566";
+            opiskelija[0].Kurssit = "Matematiikka, Viestintä";
+
+            opiskelija[1].Nimi = "Jaana Erämies";
+            opiskelija[1].Opiskelijanumero = "S1235";
+            opiskelija[1].Osoite = "Maantie 1, 12345 Jontikka";
+            opiskelija[1].Puhelinnumero = "040 123 5467";
+            opiskelija[1].Kurssit = "Ohjelmointi, Liikunta";
+
+            opiskelija[2].Nimi = "Jonne Junkkari";
+            opiskelija[2].Opiskelijanumero = "L1634";
+            opiskelija[2].Osoite = "Ojanpohja 6, 12300 Jontikka";
+            opiskelija[2].Puhelinnumero = "050 773 8866";
+            opiskelija[2].Kurssit = "Matematiikka, Ohjelmointi, Tietokannat";
+
+            opiskelija[3].Nimi = "Paavo Pesusieni";
+            opiskelija[3].Opiskelijanumero = "D1138";
+            opiskelija[3].Osoite = "Merenpohja, 00000 Meri";
+            opiskelija[3].Puhelinnumero = "-";
+            opiskelija[3].Kurssit = "Uiminen, Kalalogia, Meritähdet ja niiden käyttäytyminen";
+
+            opiskelija[4].Nimi = "Pikachu";
+            opiskelija[4].Opiskelijanumero = "A9876";
+            opiskelija[4].Osoite = "Puunkolo 12, Metsä";
+            opiskelija[4].Puhelinnumero = "045 908 4539";
+            opiskelija[4].Kurssit = "Elektroniikka, Sähkövoimatekniikka, Piirien käristäminen";
+
+            Console.Clear();
+            for (int i = 0; i <= opiskelija.Length; i++)
+            { opiskelija[i].Tulosta(); }
+
+            opiskelija[1].VaihdaNimi();
+            opiskelija[1].VaihdaOsoite();
+            opiskelija[1].VaihdaPuhelinnumero();
+            opiskelija[1].LisaaKurssi();
+
+            Console.Clear();
+            for (int i = 0; i < 5; i++)
+            { opiskelija[i].Tulosta(); }
+
+            opiskelija[1].LisaaKurssi();
+
+            Console.Clear();
+            for (int i = 0; i < 5; i++)
+            { opiskelija[i].Tulosta(); }
         }
     }
 }
