@@ -135,24 +135,24 @@ namespace Tuntiharjoitukset
             opiskelija[4].Puhelinnumero = "045 908 4539";
             opiskelija[4].Kurssit = "Elektroniikka, Sähkövoimatekniikka, Piirien käristäminen";
 
-            Console.Clear();
-            for (int i = 0; i <= opiskelija.Length; i++)
-            { opiskelija[i].Tulosta(); }
+             Console.Clear();
+             for (int i = 0; i <= opiskelija.Length; i++)
+             { opiskelija[i].Tulosta(); }
 
-            opiskelija[1].VaihdaNimi();
-            opiskelija[1].VaihdaOsoite();
-            opiskelija[1].VaihdaPuhelinnumero();
-            opiskelija[1].LisaaKurssi();
+             opiskelija[1].VaihdaNimi();
+             opiskelija[1].VaihdaOsoite();
+             opiskelija[1].VaihdaPuhelinnumero();
+             opiskelija[1].LisaaKurssi();
 
-            Console.Clear();
-            for (int i = 0; i < 5; i++)
-            { opiskelija[i].Tulosta(); }
+             Console.Clear();
+             for (int i = 0; i < 5; i++)
+             { opiskelija[i].Tulosta(); }
 
-            opiskelija[1].LisaaKurssi();
+             opiskelija[1].LisaaKurssi();
 
-            Console.Clear();
-            for (int i = 0; i < 5; i++)
-            { opiskelija[i].Tulosta(); }
+             Console.Clear();
+             for (int i = 0; i < 5; i++)
+             { opiskelija[i].Tulosta(); }
         }
     }
 }
