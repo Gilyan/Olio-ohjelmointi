@@ -16,7 +16,7 @@ namespace Tuntiharjoitukset
         static void Main(string[] args)
         {
             //TestaaKiuas();            // Tehtävä 1 - tehty
-            //TestaaPesukone();         // Tehtävä 2 - VAIHEESSA
+            TestaaPesukone();         // Tehtävä 2 - tehty
             //TestaaTelevisio();        // Tehtävä 3 - tehty
             //TestaaVehicle();          // Tehtävä 4 - tehty
             //TestaaOpiskelija();       // Tehtävä 5 - tehty
@@ -48,6 +48,19 @@ namespace Tuntiharjoitukset
         **********************************************/
         static void TestaaPesukone()
         {
+            Pesukone pesukone = new Pesukone();
+
+            pesukone.OnkoPaalla = true;        // Laitetaan pesukone päälle
+            pesukone.Lampotila = 40;
+            pesukone.Pesuohjelma = 2;
+
+            pesukone.Tulosta();
+            pesukone.PesePyykki();
+
+            pesukone.OnkoPaalla = false;        // Pesukone pois päältä
+
+            pesukone.Tulosta();
+            pesukone.PesePyykki();
 
         }
 
