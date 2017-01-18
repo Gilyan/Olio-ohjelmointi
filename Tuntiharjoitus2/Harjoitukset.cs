@@ -16,7 +16,8 @@ namespace Tuntiharjoitukset
         static void Main(string[] args)
         {
             //TestaaHissi();            // Tehtävä 1
-            TestaaVahvistin();        // Tehtävä 2
+            //TestaaVahvistin();        // Tehtävä 2
+            TestaaHenkilotiedot();    // Tehtävä 2
 
         }
 
@@ -100,6 +101,29 @@ namespace Tuntiharjoitukset
 
                 else break;
             }
+        }
+
+        /**********************************************
+        *  Tehtävä 3 - Henkilotiedot-olion testausta  *
+        **********************************************/
+        static void TestaaHenkilotiedot()
+        {
+            Employee employee = new Employee();
+
+            employee.Name = "Dina Dyykkari";
+            employee.Profession = "Roskakuski";
+            employee.Salary = 2500;
+
+            Boss boss = new Boss();
+
+            boss.Name = "Bertta Bomo";
+            boss.Profession = "Esimies";
+            boss.Salary = 3000;
+            boss.Car = "Volvo";
+            boss.Bonus = 200;
+
+            Console.WriteLine(employee.ToString());
+            Console.WriteLine(boss.ToString());
         }
     }
 }
