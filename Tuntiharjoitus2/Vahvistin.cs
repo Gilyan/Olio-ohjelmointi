@@ -10,17 +10,20 @@ using System;
 
 namespace JAMK.IT
 {
-    public class Hissi
+    public class Vahvistin
     {
-        int kerros;
-        public int Kerros
+        int aani;
+        public int Aanenvoimakkuus
         {
             get
-            { return kerros; }
+            {
+                return aani;
+            }
             set
             {
-                if (value > 0 && value < 6)
-                { kerros = value; }
+                if (value >= 0 && value <= 100)
+                { aani = value; }
+
             }
         }
     }
