@@ -20,7 +20,7 @@ namespace Tuntiharjoitukset
             //TestaaTelevisio();        // Tehtävä 3 - tehty
             //TestaaVehicle();          // Tehtävä 4 - tehty
             //TestaaOpiskelija();       // Tehtävä 5 - tehty
-            TestaaJaakaappi();        // Tehtävä 6 - tehty
+            //TestaaJaakaappi();        // Tehtävä 6 - tehty
         }
 
         /**********************************************

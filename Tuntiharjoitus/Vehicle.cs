@@ -23,9 +23,11 @@ namespace JAMK.IT
             Console.WriteLine("Color: {0}", Color);
         }
 
-        public string ToString()
+        public override string ToString()       // koska ToString löytyy kantaluokasta, ylikirjoitetaan overridella olemassa oleva
         {
-            return String.Format("Car name: {0}, speed: {1} and color: {2}", Name, Speed, Color); 
+            //return String.Format("Car name: {0}, speed: {1} and color: {2}", Name, Speed, Color); 
+
+            return Name + ", " + Color + ", " + Speed;
         }
     }
 }

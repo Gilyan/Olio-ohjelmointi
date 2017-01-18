@@ -18,7 +18,7 @@ namespace JAMK.IT
         public string Puhelinnumero { get; set; }
         public string Kurssit { get; set; }
 
-        public void Tulosta()
+        public void Tulosta()          // pitää olla string-tyyppinen, jossa return string --> ks vehicle ToString. Console viittaa käyttöliittymään.
         {
             Console.WriteLine("********************************************************");
             Console.WriteLine("OPISKELIJAN TIEDOT");
