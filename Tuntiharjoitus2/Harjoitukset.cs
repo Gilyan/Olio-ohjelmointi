@@ -17,8 +17,8 @@ namespace Tuntiharjoitukset
         {
             //TestaaHissi();            // Tehtävä 1
             //TestaaVahvistin();        // Tehtävä 2
-            TestaaHenkilotiedot();    // Tehtävä 2
-
+            //TestaaHenkilotiedot();    // Tehtävä 3
+            TestaaKulkuneuvot();      // Tehtävä 4
         }
 
         /**********************************************
@@ -124,6 +124,41 @@ namespace Tuntiharjoitukset
 
             Console.WriteLine(employee.ToString());
             Console.WriteLine(boss.ToString());
+        }
+
+        /**********************************************
+        *   Tehtävä 4 - Kulkuneuvot-olion testausta   *
+        **********************************************/
+        static void TestaaKulkuneuvot()
+        {
+            Kulkuneuvo kulkuneuvo = new Kulkuneuvo();
+
+            kulkuneuvo.Nimi = "Yksisarvinen";
+            kulkuneuvo.Malli = "hevonen";
+            kulkuneuvo.Vuosi = 2010;
+            kulkuneuvo.Vari = "valkoinen";
+
+            Polkupyora pyora = new Polkupyora();
+
+            pyora.Nimi = "Ainotar 7-v";
+            pyora.Malli = "Helkama";
+            pyora.Vuosi = 2017;
+            pyora.Vari = "punainen";
+            pyora.OnkoVaihteet = true;
+            pyora.VaihteistonNimi = "Shimano Nexus 7 - V";
+
+            Vene venho = new Vene();
+
+            venho.Nimi = "Titanic";
+            venho.Malli = "Suomi 420";
+            venho.Vuosi = 2005;
+            venho.Vari = "sininen";
+            venho.Tyyppi = "soutuvene";
+            venho.Istuinpaikka = 6;
+
+            Console.WriteLine(kulkuneuvo.ToString());
+            Console.WriteLine(pyora.ToString());
+            Console.WriteLine(venho.ToString());
         }
     }
 }

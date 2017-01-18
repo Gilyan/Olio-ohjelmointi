@@ -13,13 +13,15 @@ namespace JAMK.IT
     public class Hissi
     {
         int kerros;
+        int minKerros = 1;
+        int maxKerros = 5;
         public int Kerros
         {
             get
             { return kerros; }
             set
             {
-                if (value > 0 && value < 6)
+                if (value >= minKerros && value <= maxKerros)
                 { kerros = value; }
             }
         }
