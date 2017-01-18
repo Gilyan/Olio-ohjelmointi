@@ -16,11 +16,11 @@ namespace Tuntiharjoitukset
         static void Main(string[] args)
         {
             //TestaaKiuas();            // Tehtävä 1 - tehty
-            TestaaPesukone();         // Tehtävä 2 - tehty
+            //TestaaPesukone();         // Tehtävä 2 - tehty
             //TestaaTelevisio();        // Tehtävä 3 - tehty
             //TestaaVehicle();          // Tehtävä 4 - tehty
             //TestaaOpiskelija();       // Tehtävä 5 - tehty
-            //TestaaJaakaappi();        // Tehtävä 6 - tehty
+            TestaaJaakaappi();        // Tehtävä 6 - tehty
         }
 
         /**********************************************
@@ -190,30 +190,27 @@ namespace Tuntiharjoitukset
             jaakaappi.Tulosta();
 
             jaakaappi.OstaRuokaa();
-            jaakaappi.Tulosta();
+            Console.WriteLine("Jääkaapin täyttöaste on nyt {0} prosenttia.", jaakaappi.Tayttoaste);
 
             jaakaappi.SyoRuokaa();
-            jaakaappi.Tulosta();
+            Console.WriteLine("Jääkaapin täyttöaste on nyt {0} prosenttia.", jaakaappi.Tayttoaste);
 
-            Console.WriteLine("AVATAAN JÄÄKAAPIN OVI - lämpö nousee 5 astetta");
             jaakaappi.OviAuki = true;           // Jääkaapin ovi on auki
-            jaakaappi.Tulosta();
+            Console.WriteLine("Jääkaapin oven tila: {0}.", jaakaappi.OviAuki);
+            Console.WriteLine("Jääkaapin lämpötila {0} astetta.", jaakaappi.Lampotila);
 
-            Console.WriteLine("JÄÄKAAPISTA VIRRAT POIS PÄÄLTÄ - ruuat meni pilalle ja lämpötila = huoneenlämpö");
             jaakaappi.OnkoPaalla = false;       // Jääkaappi ei ole päällä
-            jaakaappi.Tulosta();
+            Console.WriteLine("Jääkaapin tila: {0}.", jaakaappi.OnkoPaalla);
+            Console.WriteLine("Jääkaapin lämpötila {0} astetta.", jaakaappi.Lampotila);
 
-            Console.WriteLine("JÄÄKAAPIN OVI ON TAAS KIINNI JA VIRRAT PÄÄLLÄ");
-            jaakaappi.OviAuki = false;          // Ovi on taas kiinni 
+            jaakaappi.OviAuki = false;
             jaakaappi.OnkoPaalla = true;        // Jääkaappi on taas päällä
-            jaakaappi.Tulosta();
 
-            Console.WriteLine("VÄHENNETÄÄN LÄMPÖÄ");
             jaakaappi.VahennaLampoa();
             jaakaappi.VahennaLampoa();
             jaakaappi.VahennaLampoa();
             jaakaappi.VahennaLampoa();
-            jaakaappi.Tulosta();
+            Console.WriteLine("Jääkaapin lämpötila {0} astetta.", jaakaappi.Lampotila);
         }
     }
 }
