@@ -15,10 +15,13 @@ namespace Tuntiharjoitukset
     {
         static void Main(string[] args)
         {
-            //TestaaHissi();            // Tehtävä 1
-            //TestaaVahvistin();        // Tehtävä 2
-            //TestaaHenkilotiedot();    // Tehtävä 3
-            TestaaKulkuneuvot();      // Tehtävä 4
+            //TestaaHissi();            // Tehtävä 1 - tehty
+            //TestaaVahvistin();        // Tehtävä 2 - tehty
+            //TestaaHenkilotiedot();    // Tehtävä 3 - tehty
+            //TestaaKulkuneuvot();      // Tehtävä 4 - tehty
+            TestaaRadio();            // Tehtävä 5
+            //Testaa();      // Tehtävä 6
+            //Testaa();      // Tehtävä 7
         }
 
         /**********************************************
@@ -159,6 +162,81 @@ namespace Tuntiharjoitukset
             Console.WriteLine(kulkuneuvo.ToString());
             Console.WriteLine(pyora.ToString());
             Console.WriteLine(venho.ToString());
+        }
+
+        /**********************************************
+         *     Tehtävä 1 - Radio-olion testausta      *
+        **********************************************/
+        static void TestaaRadio()
+        {
+            Radio radio = new Radio();
+
+            radio.OnkoPaalla = true;        // Asetetaan radio päälle
+
+            while (radio.OnkoPaalla = true)                        // Ohjelma päättyy, jos syöttää jotain muuta kuin int
+            {
+                int aanenvoimakkuus = 0;
+                int taajuus = 0;
+                string vastaus = "";
+                bool testi, testi2;
+
+                Console.WriteLine("Radion tila : {0}", radio.OnkoPaalla);
+
+                Console.Write("Mikä äänenvoimakkuus? (1-9) > ");
+                vastaus = Console.ReadLine();
+
+                testi = int.TryParse(vastaus, out aanenvoimakkuus);
+
+                if (testi)
+                {
+                    radio.Aanenvoimakkuus = aanenvoimakkuus;
+
+                    if (aanenvoimakkuus < 1)
+                    {
+                        aanenvoimakkuus = 1;
+                        Console.WriteLine("Liian pieni arvo, äänenvoimakkuus on nyt {0}.", aanenvoimakkuus);
+                    }
+
+                    else if (aanenvoimakkuus > 9)
+                    {
+                        aanenvoimakkuus = 9;
+                        Console.WriteLine("Liian suuri arvo, äänenvoimakkuus on nyt {0}.", aanenvoimakkuus);
+                    }
+
+                    else if (aanenvoimakkuus >= 1 && aanenvoimakkuus <= 9)
+                    {
+                        Console.WriteLine("Äänenvoimakkuus on nyt " + aanenvoimakkuus);
+                    }
+                }
+
+                Console.Write("Haluttu taajuus? (2000-26000 Hz) > ");
+                vastaus = Console.ReadLine();
+
+                testi2 = int.TryParse(vastaus, out taajuus);
+
+                if (testi2)
+                {
+                    radio.Taajuus = taajuus;
+
+                    if (taajuus < 2000)
+                    {
+                        taajuus = 2000;
+                        Console.WriteLine("Liian pieni arvo, taajuus on nyt {0}.", taajuus);
+                    }
+
+                    else if (taajuus > 26000)
+                    {
+                        taajuus = 26000;
+                        Console.WriteLine("Liian suuri arvo, taajuus on nyt {0}.", taajuus);
+                    }
+
+                    else if (taajuus >= 2000 && taajuus <= 26000)
+                    {
+                        Console.WriteLine("Taajuus on nyt " + taajuus);
+                    }
+                }
+
+            }
         }
     }
 }

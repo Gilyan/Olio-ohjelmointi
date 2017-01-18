@@ -48,6 +48,7 @@
     <Compile Include="Hissi.cs" />
     <Compile Include="Kulkuneuvot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Radio.cs" />
     <Compile Include="Vahvistin.cs" />
   </ItemGroup>
   <ItemGroup>
