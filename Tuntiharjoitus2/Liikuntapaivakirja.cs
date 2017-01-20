@@ -27,13 +27,12 @@ namespace JAMK.IT
     {
         public float kilometri;
 
+        public int Aika { get; set; }
         public float Matka
         {
             get { return kilometri; }
             set { kilometri = value / 1000; }
         }
-
-        public int Aika { get; set; }
 
         public override string ToString()
         {
