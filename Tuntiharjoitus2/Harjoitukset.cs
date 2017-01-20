@@ -19,9 +19,9 @@ namespace Tuntiharjoitukset
             //TestaaVahvistin();        // Tehtävä 2 - tehty
             //TestaaHenkilotiedot();    // Tehtävä 3 - tehty
             //TestaaKulkuneuvot();      // Tehtävä 4 - tehty
-            TestaaRadio();            // Tehtävä 5
-            //Testaa();      // Tehtävä 6
-            //Testaa();      // Tehtävä 7
+            //TestaaRadio();            // Tehtävä 5 - tehty
+            //TestaaKirjahylly();       // Tehtävä 6 - tehty
+            TestaaPaivakirja();       // Tehtävä 7
         }
 
         /**********************************************
@@ -165,7 +165,7 @@ namespace Tuntiharjoitukset
         }
 
         /**********************************************
-         *     Tehtävä 1 - Radio-olion testausta      *
+         *     Tehtävä 5 - Radio-olion testausta      *
         **********************************************/
         static void TestaaRadio()
         {
@@ -173,7 +173,7 @@ namespace Tuntiharjoitukset
 
             radio.OnkoPaalla = true;        // Asetetaan radio päälle
 
-            while (radio.OnkoPaalla = true)                        // Ohjelma päättyy, jos syöttää jotain muuta kuin int
+            while (radio.OnkoPaalla == true)
             {
                 int aanenvoimakkuus = 0;
                 int taajuus = 0;
@@ -236,7 +236,109 @@ namespace Tuntiharjoitukset
                     }
                 }
 
+                Console.WriteLine("Vieläkö kuunnellaan radiota? joo / ei");
+                vastaus = Console.ReadLine();
+
+                if (vastaus == "joo")
+                { radio.OnkoPaalla = true; }
+
+                else { radio.OnkoPaalla = false; }
+
+                Console.WriteLine("Radion tila : {0}", radio.OnkoPaalla);
             }
+        }
+
+        /**********************************************
+         *   Tehtävä 6 - Kirjahylly-olion testausta   *
+        **********************************************/
+        static void TestaaKirjahylly()
+        {
+            Kirja kirja = new Kirja();
+
+            kirja.MikaTavara = "Kirja";
+            kirja.Nimi = "Aku Ankka";
+            kirja.Tekija = "Disney";
+            kirja.Vuosi = 2016;
+            kirja.Sivumaara = 32;
+
+            Musiikki levy = new Musiikki();
+
+            levy.MikaTavara = "CD-levy";
+            levy.Nimi = "Repullinen hittejä";
+            levy.Tekija = "Eppu Normaali";
+            levy.Vuosi = 1996;
+            levy.Kappaleita = 24;
+
+            Tablet tabuletti = new Tablet();
+
+            tabuletti.MikaTavara = "Tablet";
+            tabuletti.Nimi = "Galaxy Tab A 10.1";
+            tabuletti.Tekija = "Samsung";
+            tabuletti.Vuosi = 2016;
+            tabuletti.Vari = "musta";
+            tabuletti.NaytonKoko = 10.1F;
+
+            Console.WriteLine(kirja.ToString());
+            Console.WriteLine(levy.ToString());
+            Console.WriteLine(tabuletti.ToString());
+        }
+
+        /**********************************************
+         *  Tehtävä 7 - Paivakirja-olion testausta    *
+        **********************************************/
+        static void TestaaPaivakirja()
+        {
+            int laji = 0;
+            string vastaus;
+
+            Console.Write("Mikä laji? 1 = pyöräily, 2 = painonnosto > ");
+            vastaus = Console.ReadLine();
+
+            bool tulos = int.TryParse(vastaus, out laji);
+
+            if (tulos)
+            {
+                switch (laji)
+                {
+                    case 1:
+                        Pyoraily pyoraily = new Pyoraily();
+                        pyoraily.Laji = "Pyöräily";
+
+                        Console.Write("Anna päivämäärä (p.kk.v) > ");
+                        pyoraily.Paivamaara = Console.ReadLine();
+
+                        Console.Write("Anna poljettu matka metreissä > ");
+                        pyoraily.Matka = int.Parse(Console.ReadLine());
+
+                        Console.Write("Anna käytetty aika minuuteissa > ");
+                        pyoraily.Aika = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine(pyoraily.ToString());
+                        break;
+
+                    case 2:
+                        Painonnosto painonnosto = new Painonnosto();
+                        painonnosto.Laji = "Painonnosto";
+
+                        Console.Write("Anna päivämäärä (p.kk.v) > ");
+                        painonnosto.Paivamaara = Console.ReadLine();
+
+                        Console.Write("Anna nostettu paino > ");
+                        painonnosto.Paino = int.Parse(Console.ReadLine());
+
+                        Console.Write("Anna toistojen määrä > ");
+                        painonnosto.Toisto = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine(painonnosto.ToString());
+                        break;
+
+                    default:
+                        Console.WriteLine("Mene ulos siitä.");
+                        break;
+                }
+            }
+
+            else Console.WriteLine("Lopetetaan");
         }
     }
 }

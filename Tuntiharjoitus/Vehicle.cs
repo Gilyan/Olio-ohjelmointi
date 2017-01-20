@@ -25,8 +25,6 @@ namespace JAMK.IT
 
         public override string ToString()       // koska ToString löytyy kantaluokasta, ylikirjoitetaan overridella olemassa oleva
         {
-            //return String.Format("Car name: {0}, speed: {1} and color: {2}", Name, Speed, Color); 
-
             return Name + ", " + Color + ", " + Speed;
         }
     }

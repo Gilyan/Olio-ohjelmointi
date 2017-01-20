@@ -16,10 +16,7 @@ namespace JAMK.IT
         public string Profession { get; set; }
         public int Salary { get; set; }
         public Employee() { }           // Oletuskonstruktori
-        /*public Employee(string firstName, string lastName)
-        {
-            Name = firstName + " " + lastName;
-        }*/
+
         public override string ToString()
         {
             return Name + ", " + Profession + ", " + Salary + " euroa";
