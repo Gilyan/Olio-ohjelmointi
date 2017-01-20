@@ -1,5 +1,5 @@
 ﻿/* **************************************
-Harjoitellaan get- ja set -aksessorien käyttöä.
+Harjoitellaan get- ja set -aksessorien käyttöä sekä perintää.
 
 Luotu 18.1.2017
 
