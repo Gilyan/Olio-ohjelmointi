@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitukset", "Tuntih
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus2", "Tuntiharjoitus2\Tuntiharjoitus2.csproj", "{0E09B7D3-2D6E-4AF5-B3E7-4606509703A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus3", "Tuntiharjoitukset3\Tuntiharjoitus3.csproj", "{1B9776DE-E421-447A-886C-267CE911A402}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0E09B7D3-2D6E-4AF5-B3E7-4606509703A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E09B7D3-2D6E-4AF5-B3E7-4606509703A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E09B7D3-2D6E-4AF5-B3E7-4606509703A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B9776DE-E421-447A-886C-267CE911A402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B9776DE-E421-447A-886C-267CE911A402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B9776DE-E421-447A-886C-267CE911A402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B9776DE-E421-447A-886C-267CE911A402}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
