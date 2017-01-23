@@ -14,12 +14,14 @@ namespace JAMK.IT
     class Luokka
     {
         public List<Oppilas> Oppilaat { get; set; }
+        public Opettaja OpeNyt { get; set; }
         public string HuoneNro { get; set; }
 
         public Luokka()
         {
             Oppilaat = new List<Oppilas>();
         }
+
         public void LisaaOppilas(Oppilas opiskelija)
         {
             Oppilaat.Add(opiskelija);
@@ -28,7 +30,7 @@ namespace JAMK.IT
 
         public override string ToString()
         {
-            string tulosta = "\nLuokassa " + HuoneNro + " opiskelee seuraavat oppilaat: ";
+            string tulosta = "\nLuokassa " + HuoneNro + " opettaa " + OpeNyt + ". Oppilaina on ";
             foreach (Oppilas r in Oppilaat)
             {
                 if (r != null) tulosta += "\n- " + r.ToString();

@@ -19,7 +19,7 @@ namespace Harjoituksia
             //TestaaRengas();             // Tehtävä 1 - tehty
             //TestaaKylmakaappi();        // Tehtävä 2
             //TestaaNisakas();            // Tehtävä 3 - tehty
-            //TestaaLuokka();             // Tehtävä 4
+            TestaaLuokka();             // Tehtävä 4
         }
 
         /**********************************************
@@ -121,11 +121,8 @@ namespace Harjoituksia
             atk.HuoneNro = "D421";
 
             atk.LisaaOppilas(oppilas1);
-            Console.WriteLine("Lisätty oppilas {0}, {1}", oppilas1.Nimi, oppilas1.OpNro);
             atk.LisaaOppilas(oppilas2);
-            Console.WriteLine("Lisätty oppilas {0}, {1}", oppilas2.Nimi, oppilas2.OpNro);
             atk.LisaaOppilas(oppilas3);
-            Console.WriteLine("Lisätty oppilas {0}, {1}", oppilas3.Nimi, oppilas3.OpNro);
 
             Console.WriteLine(atk.ToString());
 
