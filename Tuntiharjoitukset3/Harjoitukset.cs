@@ -48,8 +48,12 @@ namespace Harjoituksia
         **********************************************/
         static void TestaaKylmakaappi()
         {
-            Maito maito = new Maito ("Maito", "24.1.2017", "20.1.2017, true)
+            Maito maito = new Maito ("Maito", "24.1.2017", "20.1.2017", true);          // true = on loppu
 
+            Hedelma hedelma = new Hedelma("Päärynä", "28.1.2017", "22.1.2017", "vihreä");
+
+            Console.WriteLine(hedelma.ToString());      // testaus
+            Console.WriteLine(maito.ToString());        // testaus
         }
 
         /**********************************************
