@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Harjoitus1.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Rengas.cs" />
+    <Compile Include="Harjoitukset.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
