@@ -16,8 +16,8 @@ namespace Harjoituksia
     {
         static void Main(string[] args)
         {
-            TestaaRengas();             // Tehtävä 1
-            //TestaaKylmakaappi();        // Tehtävä 2
+            //TestaaRengas();             // Tehtävä 1 - tehty
+            TestaaKylmakaappi();        // Tehtävä 2
             //TestaaNisakas();            // Tehtävä 3
             //Testaadsafdsfds();          // Tehtävä 4
         }
@@ -48,6 +48,7 @@ namespace Harjoituksia
         **********************************************/
         static void TestaaKylmakaappi()
         {
+            Maito maito = new Maito ("Maito", "24.1.2017", "20.1.2017, true)
 
         }
 
