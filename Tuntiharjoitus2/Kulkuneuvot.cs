@@ -29,7 +29,7 @@ namespace JAMK.IT
 
         public override string ToString()
         {
-            return base.ToString() + ", vaihteisto: " + OnkoVaihteet + ", vaihteiston nimi: " + VaihteistonNimi + " euroa";
+            return base.ToString() + ", vaihteisto: " + OnkoVaihteet + ", vaihteiston nimi: " + VaihteistonNimi;
         }
     }
     class Vene : Kulkuneuvo

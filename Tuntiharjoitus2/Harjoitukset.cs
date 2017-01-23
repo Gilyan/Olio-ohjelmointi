@@ -21,7 +21,7 @@ namespace Tuntiharjoitukset
             //TestaaKulkuneuvot();      // Tehtävä 4 - tehty
             //TestaaRadio();            // Tehtävä 5 - tehty
             //TestaaKirjahylly();       // Tehtävä 6 - tehty
-            TestaaPaivakirja();       // Tehtävä 7
+            //TestaaPaivakirja();       // Tehtävä 7 - tehty
         }
 
         /**********************************************
