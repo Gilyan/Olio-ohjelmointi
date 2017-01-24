@@ -13,19 +13,20 @@ namespace JAMK.IT
 {
     class Luokka
     {
-        public List<Oppilas> Oppilaat { get; set; }
-        public Opettaja OpeNyt { get; set; }
+        public List<Oppilas> Oppilaat = new List<Oppilas>();        // Aggregation = luokka Luokka sisältää luokan Oppilas olioita
+        public Opettaja OpeNyt = new Opettaja();
         public string HuoneNro { get; set; }
-
-        public Luokka()
-        {
-            Oppilaat = new List<Oppilas>();
-        }
 
         public void LisaaOppilas(Oppilas opiskelija)
         {
             Oppilaat.Add(opiskelija);
             Console.WriteLine("Opiskelija {0} lisätty luokkaan {1}", opiskelija.Nimi, HuoneNro);
+        }
+
+        public void LisaaOpettaja(Opettaja OpeNyt)
+        {
+            this.OpeNyt = OpeNyt;
+            Console.WriteLine("Opettaja {0} lisätty luokkaan {1}", OpeNyt.Nimi, HuoneNro);
         }
 
         public override string ToString()

@@ -17,9 +17,9 @@ namespace Harjoituksia
         static void Main(string[] args)
         {
             //TestaaRengas();             // Tehtävä 1 - tehty
-            //TestaaKylmakaappi();        // Tehtävä 2
+            TestaaKylmakaappi();        // Tehtävä 2 - tehty
             //TestaaNisakas();            // Tehtävä 3 - tehty
-            TestaaLuokka();             // Tehtävä 4
+            //TestaaLuokka();             // Tehtävä 4 - tehty
         }
 
         /**********************************************
@@ -48,26 +48,31 @@ namespace Harjoituksia
         **********************************************/
         static void TestaaKylmakaappi()
         {
-            //Maito maito = new Maito ("Maito", "24.1.2017", "20.1.2017", true);          // true = on loppu
+            Sidukka rekorderlig = new Sidukka("Rekorderlig Mansikka-Lime", 0.5);
+            Sidukka kopparberg = new Sidukka("Kopparberg Mixed Fruit", 0.5);
 
-            Hedelma paaryna = new Hedelma("päärynä", "vihreä");
+            //Makkara hookoo = new Makkara("HK:n sininen", 580);        // miksei tämä toimi
+
+            Makkara hookoo = new Makkara();
+            hookoo.Nimi = "HK:n sininen";
+            hookoo.Paino = 580;
 
             Kylmakaappi kaappi = new Kylmakaappi();
-            kaappi.Tavara = "hedelmä";
-            kaappi.ParastaEnnen = "30.1.2017";
 
-            Console.WriteLine("Lisätty jääkaappiin : {0}, syötävä ennen {1}", kaappi.Tavara, kaappi.ParastaEnnen);
+            kaappi.LisaaSidua(rekorderlig);
+            kaappi.LisaaSidua(rekorderlig);
+            kaappi.LisaaSidua(rekorderlig);
+            kaappi.LisaaSidua(kopparberg);
+            kaappi.LisaaSidua(kopparberg);
+            kaappi.LisaaRuokaa(hookoo);
 
-            //kaappi.LisaaTavara(paaryna);
-
-            //Console.WriteLine(hedelma.ToString());      // testaus
-           // Console.WriteLine(maito.ToString());        // testaus
+            Console.WriteLine(kaappi.ToString());
         }
 
         /**********************************************
         *    Tehtävä 3 - Nisäkästehtävän testausta    *
         **********************************************/
-        static void TestaaNisakas()     // Toteuta pääohjelmassa muutamia ihmisiä, aikuisia ja vauvoja. Tulostele olioiden tietoja konsolille.
+        static void TestaaNisakas()
         {
             Ihminen ihminen = new Ihminen();
             ihminen.Ika = 50;
@@ -105,12 +110,12 @@ namespace Harjoituksia
             oppilas1.OpNro = "J1234";
 
             Oppilas oppilas2 = new Oppilas();
-            oppilas1.Nimi = "Lauri Lusmu";
-            oppilas1.OpNro = "L1224";
+            oppilas2.Nimi = "Lauri Lusmu";
+            oppilas2.OpNro = "L1224";
 
             Oppilas oppilas3 = new Oppilas();
-            oppilas1.Nimi = "Antti Alkoholisti";
-            oppilas1.OpNro = "A3239";
+            oppilas3.Nimi = "Antti Alkoholisti";
+            oppilas3.OpNro = "A3239";
 
             Opettaja opettaja = new Opettaja();
             opettaja.Nimi = "Olli Opettaja";
@@ -119,6 +124,8 @@ namespace Harjoituksia
             Luokka atk = new Luokka();
 
             atk.HuoneNro = "D421";
+
+            atk.LisaaOpettaja(opettaja);
 
             atk.LisaaOppilas(oppilas1);
             atk.LisaaOppilas(oppilas2);

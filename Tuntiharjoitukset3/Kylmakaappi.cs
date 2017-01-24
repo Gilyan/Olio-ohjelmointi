@@ -11,111 +11,66 @@ using System.Collections.Generic;
 
 namespace JAMK.IT
 {
-    /*  public class Kylmakaappi
-      {
-          public string Tavara { get; set; }
-          public string ParastaEnnen { get; set; }
-          public string Ostettu { get; set; }
-          public List<Kylmakaappi> Tavarat { get; }
-          public Kylmakaappi()
-          {
-              Tavarat = new List<Kylmakaappi>();
-          }
-
-          public void LisaaRuokaa(Kylmakaappi kaappi)
-          {
-              Tavarat.Add(kaappi);
-              Console.WriteLine("Tavara {0} lisätty jääkaappiin {1}", kaappi.Tavara);
-          }
-
-          public override string ToString()
-          {
-              string tulosta = Tavara + ", ostettu: " + Ostettu + ", parasta ennen: " + ParastaEnnen;
-              foreach (Kylmakaappi r in Tavarat)
-              {
-                  if (r != null) tulosta += "\n- " + r.ToString();
-              }
-              return tulosta;
-          }
-      }
-
-      class Hedelma : Kylmakaappi
-      {
-          public string Vari { get; set; }
-          public override string ToString()
-          {
-              return Vari + " " + base.ToString();
-          }
-
-          public Hedelma(string item, string bestBefore, string bought, string color)
-          {
-              Tavara = item;
-              ParastaEnnen = bestBefore;
-              Ostettu = bought;
-              Vari = color;
-          }
-      }
-
-      class Maito : Kylmakaappi
-      {
-          public bool OnkoLoppu { get; set; }     // true = on loppu
-          public override string ToString()
-          {
-              if (OnkoLoppu == true)
-              { return base.ToString() + " - LOPUSSA, osta lisää!"; }
-              else
-              { return base.ToString() + " ei ole loppu, kaikki hyvin."; }
-          }
-          public Maito(string item, string bestBefore, string bought, bool empty)
-          {
-              Tavara = item;
-              ParastaEnnen = bestBefore;
-              Ostettu = bought;
-              OnkoLoppu = empty;
-          }
-      }*/
-
-    public class Hedelma
-    {
-        public string Lajike { get; set; }
-        public string Vari { get; set; }
-        public Hedelma(string laji, string color)
-        {
-            Lajike = laji;
-            Vari = color;
-        }
-        public override string ToString()
-        {
-            return Vari + " " + Lajike;
-        }
-    }
-
     class Kylmakaappi
     {
-        public string Tavara { get; set; }
-        public string ParastaEnnen { get; set; }
+        public List<Sidukka> pullot = new List<Sidukka>();
+        public Makkara Maggara = new Makkara();
 
-        public List<Kylmakaappi> Tavarat { get; }
-
-        public Kylmakaappi()
+        public void LisaaSidua(Sidukka plo)
         {
-            Tavarat = new List<Kylmakaappi>();
+            pullot.Add(plo);
+            Console.WriteLine("Jääkaappiin lisätty {0} {1} l", plo.Nimi, plo.Koko);
         }
 
-        public void LisaaTavara(Kylmakaappi kaappi)
+        public void LisaaRuokaa(Makkara Maggara)
         {
-            Tavarat.Add(kaappi);
-            Console.WriteLine("{0} on lisätty jääkaappiin", Tavara);
+            this.Maggara = Maggara;
+            Console.WriteLine("Jääkaappiin lisätty {0} {1} g", Maggara.Nimi, Maggara.Paino);
         }
 
         public override string ToString()
         {
-            string tulosta = "\nJääkaapissa: " + Tavara + ", parasta ennen: " + ParastaEnnen;
-            foreach (Kylmakaappi r in Tavarat)
+            string tulosta = "\nJääkaapista löytyy valon lisäksi ";
+            foreach (Sidukka r in pullot)
             {
                 if (r != null) tulosta += "\n- " + r.ToString();
             }
+            tulosta += "\n- " + Maggara.ToString();
             return tulosta;
+        }
+    }
+
+    public class Sidukka
+    {
+        public string Nimi { get; set; }
+        public double Koko { get; set; }
+
+        public Sidukka(string nimi, double koko)
+        {
+            Nimi = nimi;
+            Koko = koko;
+        }
+
+        public override string ToString()
+        {
+            return Nimi + " " + Koko + " l";
+        }
+    }
+
+    public class Makkara
+    {
+        public string Nimi { get; set; }
+        public int Paino { get; set; }
+
+        /*public Makkara(string nimi, int paino)        // miksei toimi
+        {
+            Nimi = nimi;
+            Paino = paino;
+        }*/
+
+        public override string ToString()
+        {
+            return Nimi + " " + Paino + " g";
         }
     }
 }
