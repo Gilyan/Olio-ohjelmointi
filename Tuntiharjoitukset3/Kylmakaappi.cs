@@ -22,10 +22,10 @@ namespace JAMK.IT
             Console.WriteLine("Jääkaappiin lisätty {0} {1} l", plo.Nimi, plo.Koko);
         }
 
-        public void LisaaRuokaa(Makkara Maggara)
+        public void LisaaRuokaa(Makkara hk)
         {
-            this.Maggara = Maggara;
-            Console.WriteLine("Jääkaappiin lisätty {0} {1} g", Maggara.Nimi, Maggara.Paino);
+            this.Maggara = hk;
+            Console.WriteLine("Jääkaappiin lisätty {0} {1} g", hk.Nimi, hk.Paino);
         }
 
         public override string ToString()
