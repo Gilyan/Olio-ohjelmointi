@@ -14,7 +14,7 @@ namespace JAMK.IT
     class Kylmakaappi
     {
         public List<Sidukka> pullot = new List<Sidukka>();
-        public Makkara Maggara = new Makkara();
+        public Makkara maggara = new Makkara();
 
         public void LisaaSidua(Sidukka plo)
         {
@@ -24,7 +24,7 @@ namespace JAMK.IT
 
         public void LisaaRuokaa(Makkara hk)
         {
-            this.Maggara = hk;
+            this.maggara = hk;
             Console.WriteLine("Jääkaappiin lisätty {0} {1} g", hk.Nimi, hk.Paino);
         }
 
@@ -35,7 +35,7 @@ namespace JAMK.IT
             {
                 if (r != null) tulosta += "\n- " + r.ToString();
             }
-            tulosta += "\n- " + Maggara.ToString();
+            tulosta += "\n- " + maggara.ToString();
             return tulosta;
         }
     }
