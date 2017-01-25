@@ -1,5 +1,5 @@
 ﻿/* **************************************
-Harjoitellaan perintää ja koostamista.
+Harjoitellaan koostamista.
 
 Luotu 23.1.2017
 
