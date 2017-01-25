@@ -61,13 +61,6 @@ namespace JAMK.IT
     {
         public string Nimi { get; set; }
         public int Paino { get; set; }
-
-        /*public Makkara(string nimi, int paino)        // miksei toimi
-        {
-            Nimi = nimi;
-            Paino = paino;
-        }*/
-
         public override string ToString()
         {
             return Nimi + " " + Paino + " g";

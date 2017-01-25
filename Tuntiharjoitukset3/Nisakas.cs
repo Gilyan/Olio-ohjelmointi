@@ -3,7 +3,7 @@ Harjoitellaan periytymistä ja abstraktien metodien käyttämistä.
 
 Luotu 23.1.2017
 
-Minttu Mäkäläinen K8517 @ JAMK
+Minttu Mäkäläinen K8517 @ JAMK 
 ************************************** */
 
 using System;

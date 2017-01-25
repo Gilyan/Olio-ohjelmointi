@@ -51,8 +51,6 @@ namespace Harjoituksia
             Sidukka rekorderlig = new Sidukka("Rekorderlig Mansikka-Lime", 0.5);
             Sidukka kopparberg = new Sidukka("Kopparberg Mixed Fruit", 0.5);
 
-            //Makkara hookoo = new Makkara("HK:n sininen", 580);        // miksei tämä toimi
-
             Makkara hookoo = new Makkara();
             hookoo.Nimi = "HK:n sininen";
             hookoo.Paino = 580;
