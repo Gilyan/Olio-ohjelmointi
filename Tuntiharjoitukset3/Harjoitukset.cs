@@ -17,7 +17,7 @@ namespace Harjoituksia
         static void Main(string[] args)
         {
             //TestaaRengas();             // Tehtävä 1 - tehty
-            TestaaKylmakaappi();        // Tehtävä 2 - tehty
+            //TestaaKylmakaappi();        // Tehtävä 2 - tehty
             //TestaaNisakas();            // Tehtävä 3 - tehty
             //TestaaLuokka();             // Tehtävä 4 - tehty
         }
