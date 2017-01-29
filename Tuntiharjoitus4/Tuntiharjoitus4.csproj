@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CD.cs" />
     <Compile Include="Henkilorekisteri.cs" />
     <Compile Include="Harjoitukset.cs" />
+    <Compile Include="JYP.cs" />
+    <Compile Include="Korttipakka.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -16,10 +16,10 @@ namespace JAMK.IT.Harjoituksia
     {
         static void Main(string[] args)
         {
-            //TestaaRekisteri();          // Tehtävä 1 - 
-            //TestaaCD();                 // Tehtävä 2 - 
-            //TestaaKorttipakka();        // Tehtävä 3 - 
-            //TestaaPelaajat();           // Tehtävä 4 - 
+            //TestaaRekisteri();          // Tehtävä 1 - tehty
+            //TestaaCD();                 // Tehtävä 2 - tehty
+            //TestaaKorttipakka();        // Tehtävä 3 - tehty - tee bonusosa
+            TestaaPelaajat();           // Tehtävä 4 - tehty
         }
 
         /**********************************************
@@ -53,7 +53,25 @@ namespace JAMK.IT.Harjoituksia
         **********************************************/
         static void TestaaCD()
         {
+            CD levy = new CD();
+            levy.Nimi = "Rakettihitit Vol 15";
+            levy.Artisti = "Smurffit";
 
+            levy.LisaaBiisi(new Biisi { Nimi = "Smurffit tykkää" });
+            levy.LisaaBiisi(new Biisi { Nimi = "Jekkusmurffin lahja" });
+            levy.LisaaBiisi(new Biisi { Nimi = "Pikkasen smurffi" });
+            levy.LisaaBiisi(new Biisi { Nimi = "Smurffiina kampaa" });
+            levy.LisaaBiisi(new Biisi { Nimi = "Kumparemäki" });
+            levy.LisaaBiisi(new Biisi { Nimi = "Huopaa ja souda" });
+            levy.LisaaBiisi(new Biisi { Nimi = "Hiljentykää " });
+            levy.LisaaBiisi(new Biisi { Nimi = "Smurffi surffaa " });
+            levy.LisaaBiisi(new Biisi { Nimi = "Ahmattismurffi " });
+            levy.LisaaBiisi(new Biisi { Nimi = "Voiku " });
+            levy.LisaaBiisi(new Biisi { Nimi = "Hyvänsmurffisuus " });
+            levy.LisaaBiisi(new Biisi { Nimi = "Smurffilorut " });
+            levy.LisaaBiisi(new Biisi { Nimi = "Smurffityyli " });
+
+            Console.WriteLine(levy.ToString());
         }
 
         /**********************************************
@@ -61,6 +79,24 @@ namespace JAMK.IT.Harjoituksia
         **********************************************/
         static void TestaaKorttipakka()
         {
+            List<Kortti> kortti = new List<Kortti>();
+
+            string[] maat = { "Hertta", "Ruutu", "Pata", "Risti" };
+            string[] numerot = { "ässä", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jätkä", "kuningatar", "kuningas" };
+
+            foreach (string maa in maat)    // Jokaiselle maalle lisätään 13 korttia
+            {
+                for (int i = 0; i <= 12; i++)
+                {
+                    kortti.Add(new Kortti { Maa = maa, Numero = numerot[i] });
+                }
+            }
+
+            Console.WriteLine("Krottipakka: ");
+            foreach (Kortti k in kortti)
+            {
+                Console.WriteLine(k.ToString());
+            }
 
         }
 
@@ -69,8 +105,88 @@ namespace JAMK.IT.Harjoituksia
         **********************************************/
         static void TestaaPelaajat()
         {
+            int valinta = 5;
 
+            Joukkue sakki = new Joukkue();
+            sakki.Kotikaupunki = "Jyväskylä";
+            sakki.Nimi = "JYP";
 
+            // Lisäillään muutama pelaaja
+            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Juho", Sukunimi = "Olkinuora", Ika = 26, Numero = 45 });
+            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Markus", Sukunimi = "Ruusu", Ika = 19, Numero = 97 });
+            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Pekka", Sukunimi = "Tuokkola", Ika = 33, Numero = 83 });
+            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Olli", Sukunimi = "Aitola", Ika = 24, Numero = 60 });
+            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Joona", Sukunimi = "Erving", Ika = 22, Numero = 53 });
+            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Niklas", Sukunimi = "Friman", Ika = 23, Numero = 20 });
+            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Jaakko", Sukunimi = "Jokinen", Ika = 23, Numero = 16 });
+
+            do
+            {
+                Console.WriteLine("Lopeta = 0 ");
+                Console.WriteLine("Lisää pelaaja = 1 ");
+                Console.WriteLine("Poista pelaaja = 2 ");
+                Console.WriteLine("Tulosta pelaajat = 3 ");
+                Console.Write("Anna valinta > ");
+                valinta = int.Parse(Console.ReadLine());
+
+                switch (valinta)
+                {
+                    case 1: // Lisää pelaaja
+
+                        Pelaaja hlo = new Pelaaja();
+
+                        Console.Write("Pelaajan etunimi > ");
+                        hlo.Etunimi = Console.ReadLine();
+
+                        Console.Write("Pelaajan sukunimi > ");
+                        hlo.Sukunimi = Console.ReadLine();
+
+                        Console.Write("Pelaajan ikä > ");
+                        hlo.Ika = int.Parse(Console.ReadLine());
+
+                        Console.Write("Pelaajan numero > ");
+                        hlo.Numero = int.Parse(Console.ReadLine());
+
+                        sakki.LisaaPelaaja(hlo);
+                        break;
+
+                    case 2: // Poista pelaaja
+                        Console.Write("Poistettavan pelaajan numero > ");
+                        int nro = int.Parse(Console.ReadLine());
+
+                        sakki.HaePelaajaNumerolla(nro);
+                        Console.Write("Löytyi {0}, poistetaanko? (k/e) > ", sakki.HaePelaajaNumerolla(nro));
+                        string poisto = Console.ReadLine();
+
+                        if (poisto == "e")
+                        { break; }
+
+                        if (poisto == "k")
+                        {
+                            sakki.PoistaPelaaja(nro);
+                            break;
+                        }
+
+                        else
+                        { break; }
+
+                        break;
+
+                    case 3: // Tulosta pelaajat
+                        Console.WriteLine("Joukkueen tiedot \nNimi: " + sakki.Nimi + "\nKotikaupunki: " + sakki.Kotikaupunki + "\nPelaajat: ");
+
+                        foreach (Pelaaja h in sakki.Tiimi)
+                        {
+                            Console.WriteLine("{0}", h.ToString());
+                        }
+                        break;
+
+                    case 0: // Lopeta
+                        Console.WriteLine("Lopetetaan..");
+                        break;
+
+                }
+            } while (valinta != 0);
         }
     }
 }
