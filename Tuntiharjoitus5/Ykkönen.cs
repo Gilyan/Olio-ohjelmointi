@@ -58,7 +58,7 @@ namespace JAMK.IT
 
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);  // Access to the path 'z:\nimet.txt' is denied.
+                Console.WriteLine(ex.Message);  // Access to the path is denied.
             }
 
             finally

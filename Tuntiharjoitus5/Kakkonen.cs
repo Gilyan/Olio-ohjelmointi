@@ -26,6 +26,30 @@ Esimerkkitulostus:
   Nimi Otto esiintyy 1 kertaa
   Press any key to continue . . .
 
+tehtava2.txt :
+
+Aappo
+Aappo
+Otto
+Aappo
+Aappo
+Benkku
+Benkku
+Jaakko
+Matias
+Jaakko
+Netta
+Jaakko
+Wille
+Wille
+Wille
+Wille
+Sebastian
+Cecilia
+Cecilia
+Cecilia
+Netta
+
 Minttu Mäkäläinen K8517 @ JAMK 
 ************************************** */
 
@@ -38,59 +62,50 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
-    public class Tehtava2
+    class Nimi
     {
-        public static void Teht2()
+        public string HaettuNimi { get; set; }
+
+        public override string ToString()
         {
-            string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
-            string[] nimet = new string[5];             // Luodaan taulukko viidelle nimelle
-
-            for (int i = 0; i < nimet.Length; i++)
-            {
-                Console.Write("Anna nimi: ");           // Kysytään 5 nimeä
-                nimet[i] = (Console.ReadLine());
-            }
-
-            System.IO.StreamWriter outputFile = null;   // Luodaan tyhjä kirjoitustiedosto
-
-            try
-            {
-                outputFile = new System.IO.StreamWriter(mydocpath + @"\nimet.txt");
-                foreach (string rivi in nimet)
-                    outputFile.WriteLine(rivi);
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);  // Access to the path 'z:\nimet.txt' is denied.
-            }
-
-            finally
-            {
-                if (outputFile != null)         // check for null because OpenWrite might have failed
-                {
-                    outputFile.Close();         // Suljetaan kirjoitustiedosto
-                }
-            }
-
-            try         // Luetaan tiedostosta ja tulostetaan näytölle
-            {
-                string[] luettu = System.IO.File.ReadAllLines(mydocpath + @"\nimet.txt");
-
-                System.Console.WriteLine("Tiedoston nimet.txt sisältö : ");
-                foreach (string line in luettu)
-                {
-                    Console.WriteLine(line);    // Tulostetaan haetut rivit
-                }
-            }
-
-            catch (FileNotFoundException)
-            {
-                Console.WriteLine("Tiedostoa ei löydetty (FileNotFoundException)");
-            }
-
+            return HaettuNimi;
         }
     }
+    class Nimet
+    {
+        private List<Nimi> nimet;
+        public List<Nimi> Nimilista
+        {
+            get { return nimet; }
+        }
+        public Nimet()
+        {
+            nimet = new List<Nimi>();
+        }
+        public void LisaaNimi(Nimi nimi)
+        {
+            nimet.Add(nimi);
+        }
+        public void LaskeNimet(int maara)
+        {
+            Nimilista.Count();
+        }
+        public void LaskeKerrat()
+        {
 
+        }
+        public void Jarjesta()
+        {
+
+        }
+        public override string ToString()
+        {
+            string tulosta = "";
+            foreach (Nimi h in Nimilista)
+            {
+                tulosta += "\n- " + h.ToString();
+            }
+            return tulosta;
+        }
+    }
 }
