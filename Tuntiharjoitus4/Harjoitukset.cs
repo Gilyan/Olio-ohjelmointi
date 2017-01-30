@@ -18,8 +18,8 @@ namespace JAMK.IT.Harjoituksia
         {
             //TestaaRekisteri();          // Tehtävä 1 - tehty
             //TestaaCD();                 // Tehtävä 2 - tehty
-            //TestaaKorttipakka();        // Tehtävä 3 - tehty - tee bonusosa
-            TestaaPelaajat();           // Tehtävä 4 - tehty
+            TestaaKorttipakka();        // Tehtävä 3 - tehty - tee bonusosa, jossa sekoitetaan korttipakka
+            //TestaaPelaajat();           // Tehtävä 4 - tehty
         }
 
         /**********************************************

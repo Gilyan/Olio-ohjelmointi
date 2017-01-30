@@ -43,7 +43,6 @@ namespace JAMK.IT
     public class Biisi
     {
         public string Nimi { get; set; }
-
         public override string ToString()
         {
             return Nimi;
