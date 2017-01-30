@@ -81,10 +81,11 @@ namespace JAMK.IT.Harjoituksia
         {
             List<Kortti> kortti = new List<Kortti>();
 
+            // Määritellään maat ja numerot
             string[] maat = { "Hertta", "Ruutu", "Pata", "Risti" };
             string[] numerot = { "ässä", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jätkä", "kuningatar", "kuningas" };
 
-            foreach (string maa in maat)    // Jokaiselle maalle lisätään 13 korttia
+            foreach (string maa in maat)        // Jokaiselle maalle lisätään 13 korttia
             {
                 for (int i = 0; i <= 12; i++)
                 {
@@ -92,7 +93,7 @@ namespace JAMK.IT.Harjoituksia
                 }
             }
 
-            Console.WriteLine("Krottipakka: ");
+            Console.WriteLine("Korttipakka: "); // Printataan koko roska näytölle
             foreach (Kortti k in kortti)
             {
                 Console.WriteLine(k.ToString());
