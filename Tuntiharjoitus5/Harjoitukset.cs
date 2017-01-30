@@ -16,43 +16,10 @@ namespace JAMK.IT.Harjoituksia
     {
         static void Main(string[] args)
         {
-            Tehtava1.Teht1();           // Tehtävä 1 - tehty
-            //TestaaCD();                 // Tehtävä 2 - 
-            //TestaaKorttipakka();        // Tehtävä 3 - 
-            //TestaaPelaajat();           // Tehtävä 4 - 
-        }
-
-        /**********************************************
-        *       Tehtävä 1 - Tiedoston testausta       *
-        **********************************************/
-        static void TestaaTiedosto()
-        {
-            
-        }
-
-        /**********************************************
-        *    Tehtävä 2 - CD-harjoituksen testausta    *
-        **********************************************/
-        static void TestaaCD()
-        {
-
-        }
-
-        /**********************************************
-        *      Tehtävä 3 - Korttipakan testausta      *
-        **********************************************/
-        static void TestaaKorttipakka()
-        {
-
-
-        }
-
-        /**********************************************
-        *        Tehtävä 4 - Pelaajien testausta      *
-        **********************************************/
-        static void TestaaPelaajat()
-        {
-           
+            //Tehtava1.Teht1();           // Tehtävä 1 - tehty
+            Tehtava2.Teht2();           // Tehtävä 2 - 
+            //Tehtava3.Teht3();           // Tehtävä 3 - 
+            //Tehtava4.Teht4();           // Tehtävä 4 - 
         }
     }
 }
