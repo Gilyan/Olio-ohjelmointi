@@ -42,7 +42,8 @@ namespace JAMK.IT.Harjoituksia
                 }
 
                 //nimi.LaskeNimet();
-                Console.WriteLine("Tiedostossa tehtava2.txt on {0} erilaista nimeä : ", nimi.LaskeNimet(nimi);
+                int maara = nimi.LaskeNimet();
+                Console.WriteLine("Tiedostossa tehtava2.txt on {0} erilaista nimeä : ", maara);
 
                 Console.Write("Tiedoston tehtava2.txt sisältö : ");    // Tulostetaan sisältö sellaisenaan
                 Console.WriteLine(nimi.ToString());
