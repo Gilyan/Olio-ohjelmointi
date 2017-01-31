@@ -86,9 +86,9 @@ namespace JAMK.IT
         {
             nimet.Add(nimi);
         }
-        public void LaskeNimet(int maara)
+        public void LaskeNimet()
         {
-            Nimilista.Count();
+            nimet.Count();
         }
         public void LaskeKerrat()
         {

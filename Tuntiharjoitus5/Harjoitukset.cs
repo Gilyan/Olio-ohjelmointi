@@ -40,21 +40,21 @@ namespace JAMK.IT.Harjoituksia
                 {
                     nimi.LisaaNimi(new Nimi() { HaettuNimi = line });
                 }
+
+                //nimi.LaskeNimet();
+                Console.WriteLine("Tiedostossa tehtava2.txt on {0} erilaista nimeä : ", nimi.LaskeNimet(nimi);
+
+                Console.Write("Tiedoston tehtava2.txt sisältö : ");    // Tulostetaan sisältö sellaisenaan
+                Console.WriteLine(nimi.ToString());
+
+                Console.ReadLine();
+                Console.WriteLine("Tiedoston tehtava2.txt sisältö aakkostettuna: ");    // Tulostetaan sisältö aakkostettuna
             }
 
             catch (FileNotFoundException)
             {
                 Console.WriteLine("Tiedostoa ei löydetty (FileNotFoundException)");
             }
-
-            nimi.LaskeNimet();
-            Console.WriteLine("Tiedostossa tehtava2.txt on {0} erilaista nimeä : ", nimi.LaskeNimet();
-
-            Console.Write( "Tiedoston tehtava2.txt sisältö : ");    // Tulostetaan sisältö sellaisenaan
-            Console.WriteLine(nimi.ToString());
-
-            Console.ReadLine();
-            Console.WriteLine("Tiedoston tehtava2.txt sisältö aakkostettuna: ");    // Tulostetaan sisältö aakkostettuna
 
         }
     }
