@@ -32,9 +32,9 @@ namespace JAMK.IT.Harjoituksia
 
             Nimet nimi = new Nimet();
 
-            try         // Luetaan tiedostosta
-            {
-                string[] luettu = System.IO.File.ReadAllLines(mydocpath + @"\tehtava2.txt");
+            Console.WriteLine(File.Exists(mydocpath + @"\tehtava2.txt") ? "File exists." : "File does not exist.");
+
+            string[] luettu = System.IO.File.ReadAllLines(mydocpath + @"\tehtava2.txt");
 
                 foreach (string line in luettu)
                 {
@@ -42,20 +42,20 @@ namespace JAMK.IT.Harjoituksia
                 }
 
                 //nimi.LaskeNimet();
-                int maara = nimi.LaskeNimet();
-                Console.WriteLine("Tiedostossa tehtava2.txt on {0} erilaista nimeä : ", maara);
+               // int maara = nimi.LaskeNimet();
+                //Console.WriteLine("Tiedostossa tehtava2.txt on {0} erilaista nimeä : ", maara);
 
                 Console.Write("Tiedoston tehtava2.txt sisältö : ");    // Tulostetaan sisältö sellaisenaan
                 Console.WriteLine(nimi.ToString());
 
                 Console.ReadLine();
                 Console.WriteLine("Tiedoston tehtava2.txt sisältö aakkostettuna: ");    // Tulostetaan sisältö aakkostettuna
-            }
 
-            catch (FileNotFoundException)
+
+            /*catch (FileNotFoundException)
             {
                 Console.WriteLine("Tiedostoa ei löydetty (FileNotFoundException)");
-            }
+            }*/
 
         }
     }

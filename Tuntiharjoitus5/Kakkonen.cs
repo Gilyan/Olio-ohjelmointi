@@ -88,7 +88,7 @@ namespace JAMK.IT
         }
         public int LaskeNimet(int maara)
         {
-            maara = nimet.Count();
+            maara = nimet.Count;
             return maara;
         }
         public void LaskeKerrat()
