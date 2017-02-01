@@ -19,12 +19,12 @@ namespace JAMK.IT
         {
             try
             {
-                //TestaaNoppa();              // Tehtävä 1 - 
-                //Testaa();           // Tehtävä 2 - 
-                //Testaa();           // Tehtävä 3 - 
-                //Testaa();           // Tehtävä 4 - 
-                //Testaa();           // Tehtävä 5 - 
-                //Testaa();           // Tehtävä 6 - 
+                TestaaNoppa();              // Tehtävä 1 - 
+                //TestaaOstokset();           // Tehtävä 2 - 
+                //TestaaKalat();              // Tehtävä 3 - 
+                //TestaaKuviot();             // Tehtävä 4 - 
+                //TestaaLaskutoimitukset();   // Tehtävä 5 - 
+                //TestaaOstoksetJaTestaus();  // Tehtävä 6 - 
             }
 
             catch (Exception ex)
