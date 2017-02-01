@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace JAMK.IT.Harjoituksia
+namespace JAMK.IT
 {
     class Harjoitukset
     {

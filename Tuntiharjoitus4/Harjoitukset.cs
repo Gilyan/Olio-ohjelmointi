@@ -1,193 +1,344 @@
 ﻿/* **************************************
 Tuntiharjoituksille pääohjelma.
 
-Luotu 25.1.2017
+Luotu 18.1.2017
 
 Minttu Mäkäläinen K8517 @ JAMK
 ************************************** */
 
 using JAMK.IT;                          // Helpottaa meidän luokkien löytämistä
 using System;
-using System.Collections.Generic;
 
-namespace JAMK.IT.Harjoituksia
+namespace Tuntiharjoitukset
 {
     class Harjoitukset
     {
         static void Main(string[] args)
         {
-            //TestaaRekisteri();          // Tehtävä 1 - tehty
-            //TestaaCD();                 // Tehtävä 2 - tehty
-            TestaaKorttipakka();        // Tehtävä 3 - tehty - tee bonusosa, jossa sekoitetaan korttipakka
-            //TestaaPelaajat();           // Tehtävä 4 - tehty
+            //TestaaHissi();            // Tehtävä 1 - tehty
+            //TestaaVahvistin();        // Tehtävä 2 - tehty
+            //TestaaHenkilotiedot();    // Tehtävä 3 - tehty
+            //TestaaKulkuneuvot();      // Tehtävä 4 - tehty
+            //TestaaRadio();            // Tehtävä 5 - tehty
+            //TestaaKirjahylly();       // Tehtävä 6 - tehty
+            //TestaaPaivakirja();       // Tehtävä 7 - tehty
         }
 
         /**********************************************
-        *   Tehtävä 1 - Henkilörekisterin testausta   *
+        *      Tehtävä 1 - Hissi-olion testausta      *
         **********************************************/
-        static void TestaaRekisteri()
+        static void TestaaHissi()
         {
-            Henkilot porukka = new Henkilot();      // Luodaan muutama testihenkilö
-            Henkilo hlo1 = new Henkilo { Etunimi = "Jack", Sukunimi = "Russel", Hetu = "311270-123A" };
-            Henkilo hlo2 = new Henkilo { Etunimi = "Jane", Sukunimi = "Doe", Hetu = "210975-224C" };
-            Henkilo hlo3 = new Henkilo { Etunimi = "Sue", Sukunimi = "Pegg", Hetu = "101087-6284" };
+            Hissi hissi = new Hissi();          // Luodaan Hissi-olio
 
-            porukka.LisaaHenkilo(hlo1);             // Lisätään henkilöt porukkaan
-            porukka.LisaaHenkilo(hlo2);
-            porukka.LisaaHenkilo(hlo3);
-
-            foreach (Henkilo h in porukka.Henkilolista)     // Tulostetaan porukka näytölle
+            while (true)                        // Ohjelma päättyy, jos syöttää jotain muuta kuin int
             {
-                Console.WriteLine("{0}", h.ToString());
+                int kerros = 0;
+                Console.Write("Mikä kerros? (1-5) > ");
+                string rivi = Console.ReadLine();
+
+                bool tulos = int.TryParse(rivi, out kerros);        
+
+                if (tulos)
+                {
+                    hissi.Kerros = kerros;      // arvo --> toimitetaan luokkaohjelmalle
+
+                    if (kerros < 1)
+                    {
+                        kerros = 1;
+                        Console.WriteLine("Kerros on liian iso! Kerros on nyt {0}.", kerros);
+                    }
+
+                    else if (kerros > 5)
+                    {
+                        kerros = 5;
+                        Console.WriteLine("Kerros on liian iso! Kerros on nyt {0}.", kerros);
+                    }
+
+                    else if (kerros > 0 && kerros < 6)
+                    {
+                        Console.WriteLine("Kerros on nyt " + kerros);
+                    }
+                }
+
+                else break;
             }
-
-            Console.Write("Anna haettava hetu > ");         // Kysy hetu ja etsi sitä vastaava henkilö näytölle
-            string rivi = Console.ReadLine();
-
-            porukka.HaeHenkiloHetulla(rivi);
-            Console.WriteLine("Löytyi {0}", porukka.HaeHenkiloHetulla(rivi));
         }
 
         /**********************************************
-        *    Tehtävä 2 - CD-harjoituksen testausta    *
+        *    Tehtävä 2 - Vahvistin-olion testausta    *
         **********************************************/
-        static void TestaaCD()
+        static void TestaaVahvistin()
         {
-            CD levy = new CD();
-            levy.Nimi = "Rakettihitit Vol 15";
-            levy.Artisti = "Smurffit";
+            Vahvistin vahvistin = new Vahvistin();          // Luodaan Vahvistin-olio
 
-            levy.LisaaBiisi(new Biisi { Nimi = "Smurffit tykkää" });
-            levy.LisaaBiisi(new Biisi { Nimi = "Jekkusmurffin lahja" });
-            levy.LisaaBiisi(new Biisi { Nimi = "Pikkasen smurffi" });
-            levy.LisaaBiisi(new Biisi { Nimi = "Smurffiina kampaa" });
-            levy.LisaaBiisi(new Biisi { Nimi = "Kumparemäki" });
-            levy.LisaaBiisi(new Biisi { Nimi = "Huopaa ja souda" });
-            levy.LisaaBiisi(new Biisi { Nimi = "Hiljentykää " });
-            levy.LisaaBiisi(new Biisi { Nimi = "Smurffi surffaa " });
-            levy.LisaaBiisi(new Biisi { Nimi = "Ahmattismurffi " });
-            levy.LisaaBiisi(new Biisi { Nimi = "Voiku " });
-            levy.LisaaBiisi(new Biisi { Nimi = "Hyvänsmurffisuus " });
-            levy.LisaaBiisi(new Biisi { Nimi = "Smurffilorut " });
-            levy.LisaaBiisi(new Biisi { Nimi = "Smurffityyli " });
+            while (true)                                    // Ohjelma päättyy, jos syöttää jotain muuta kuin int
+            {
+                int aani = 0;
+                Console.Write("Set volume (0-100) > ");
+                string rivi = Console.ReadLine();
 
+                bool tulos = int.TryParse(rivi, out aani);
+
+                if (tulos)
+                {
+                    vahvistin.Aanenvoimakkuus = aani;       // arvo --> toimitetaan luokkaohjelmalle
+
+                    if (aani < 0)
+                    {
+                        aani = 0;
+                        Console.WriteLine("Too low volume -> Volume is set to minimum: {0}!", aani);
+                    }
+
+                    else if (aani > 100)
+                    {
+                        aani = 100;
+                        Console.WriteLine("Too high volume -> Volume is set to maximum: {0}!", aani);
+                    }
+
+                    else if (aani >= 0 && aani <= 100)
+                    {
+                        Console.WriteLine("Volume is set to " + aani);
+                    }
+                }
+
+                else break;
+            }
+        }
+
+        /**********************************************
+        *  Tehtävä 3 - Henkilotiedot-olion testausta  *
+        **********************************************/
+        static void TestaaHenkilotiedot()
+        {
+            Employee employee = new Employee();
+
+            employee.Name = "Dina Dyykkari";
+            employee.Profession = "Roskakuski";
+            employee.Salary = 2500;
+
+            Boss boss = new Boss();
+
+            boss.Name = "Bertta Bomo";
+            boss.Profession = "Esimies";
+            boss.Salary = 3000;
+            boss.Car = "Volvo";
+            boss.Bonus = 200;
+
+            Console.WriteLine(employee.ToString());
+            Console.WriteLine(boss.ToString());
+        }
+
+        /**********************************************
+        *   Tehtävä 4 - Kulkuneuvot-olion testausta   *
+        **********************************************/
+        static void TestaaKulkuneuvot()
+        {
+            Kulkuneuvo kulkuneuvo = new Kulkuneuvo();
+
+            kulkuneuvo.Nimi = "Yksisarvinen";
+            kulkuneuvo.Malli = "hevonen";
+            kulkuneuvo.Vuosi = 2010;
+            kulkuneuvo.Vari = "valkoinen";
+
+            Polkupyora pyora = new Polkupyora();
+
+            pyora.Nimi = "Ainotar 7-v";
+            pyora.Malli = "Helkama";
+            pyora.Vuosi = 2017;
+            pyora.Vari = "punainen";
+            pyora.OnkoVaihteet = true;
+            pyora.VaihteistonNimi = "Shimano Nexus 7 - V";
+
+            Vene venho = new Vene();
+
+            venho.Nimi = "Titanic";
+            venho.Malli = "Suomi 420";
+            venho.Vuosi = 2005;
+            venho.Vari = "sininen";
+            venho.Tyyppi = "soutuvene";
+            venho.Istuinpaikka = 6;
+
+            Console.WriteLine(kulkuneuvo.ToString());
+            Console.WriteLine(pyora.ToString());
+            Console.WriteLine(venho.ToString());
+        }
+
+        /**********************************************
+         *     Tehtävä 5 - Radio-olion testausta      *
+        **********************************************/
+        static void TestaaRadio()
+        {
+            Radio radio = new Radio();
+
+            radio.OnkoPaalla = true;        // Asetetaan radio päälle
+
+            while (radio.OnkoPaalla == true)
+            {
+                int aanenvoimakkuus = 0;
+                int taajuus = 0;
+                string vastaus = "";
+                bool testi, testi2;
+
+                Console.WriteLine("Radion tila : {0}", radio.OnkoPaalla);
+
+                Console.Write("Mikä äänenvoimakkuus? (1-9) > ");
+                vastaus = Console.ReadLine();
+
+                testi = int.TryParse(vastaus, out aanenvoimakkuus);
+
+                if (testi)
+                {
+                    radio.Aanenvoimakkuus = aanenvoimakkuus;
+
+                    if (aanenvoimakkuus < 1)
+                    {
+                        aanenvoimakkuus = 1;
+                        Console.WriteLine("Liian pieni arvo, äänenvoimakkuus on nyt {0}.", aanenvoimakkuus);
+                    }
+
+                    else if (aanenvoimakkuus > 9)
+                    {
+                        aanenvoimakkuus = 9;
+                        Console.WriteLine("Liian suuri arvo, äänenvoimakkuus on nyt {0}.", aanenvoimakkuus);
+                    }
+
+                    else if (aanenvoimakkuus >= 1 && aanenvoimakkuus <= 9)
+                    {
+                        Console.WriteLine("Äänenvoimakkuus on nyt " + aanenvoimakkuus);
+                    }
+                }
+
+                Console.Write("Haluttu taajuus? (2000-26000 Hz) > ");
+                vastaus = Console.ReadLine();
+
+                testi2 = int.TryParse(vastaus, out taajuus);
+
+                if (testi2)
+                {
+                    radio.Taajuus = taajuus;
+
+                    if (taajuus < 2000)
+                    {
+                        taajuus = 2000;
+                        Console.WriteLine("Liian pieni arvo, taajuus on nyt {0}.", taajuus);
+                    }
+
+                    else if (taajuus > 26000)
+                    {
+                        taajuus = 26000;
+                        Console.WriteLine("Liian suuri arvo, taajuus on nyt {0}.", taajuus);
+                    }
+
+                    else if (taajuus >= 2000 && taajuus <= 26000)
+                    {
+                        Console.WriteLine("Taajuus on nyt " + taajuus);
+                    }
+                }
+
+                Console.WriteLine("Vieläkö kuunnellaan radiota? joo / ei");
+                vastaus = Console.ReadLine();
+
+                if (vastaus == "joo")
+                { radio.OnkoPaalla = true; }
+
+                else { radio.OnkoPaalla = false; }
+
+                Console.WriteLine("Radion tila : {0}", radio.OnkoPaalla);
+            }
+        }
+
+        /**********************************************
+         *   Tehtävä 6 - Kirjahylly-olion testausta   *
+        **********************************************/
+        static void TestaaKirjahylly()
+        {
+            Kirja kirja = new Kirja();
+
+            kirja.MikaTavara = "Kirja";
+            kirja.Nimi = "Aku Ankka";
+            kirja.Tekija = "Disney";
+            kirja.Vuosi = 2016;
+            kirja.Sivumaara = 32;
+
+            Musiikki levy = new Musiikki();
+
+            levy.MikaTavara = "CD-levy";
+            levy.Nimi = "Repullinen hittejä";
+            levy.Tekija = "Eppu Normaali";
+            levy.Vuosi = 1996;
+            levy.Kappaleita = 24;
+
+            Tablet tabuletti = new Tablet();
+
+            tabuletti.MikaTavara = "Tablet";
+            tabuletti.Nimi = "Galaxy Tab A 10.1";
+            tabuletti.Tekija = "Samsung";
+            tabuletti.Vuosi = 2016;
+            tabuletti.Vari = "musta";
+            tabuletti.NaytonKoko = 10.1F;
+
+            Console.WriteLine(kirja.ToString());
             Console.WriteLine(levy.ToString());
+            Console.WriteLine(tabuletti.ToString());
         }
 
         /**********************************************
-        *      Tehtävä 3 - Korttipakan testausta      *
+         *  Tehtävä 7 - Paivakirja-olion testausta    *
         **********************************************/
-        static void TestaaKorttipakka()
+        static void TestaaPaivakirja()
         {
-            List<Kortti> kortti = new List<Kortti>();
+            int laji = 0;
+            string vastaus;
 
-            // Määritellään maat ja numerot
-            string[] maat = { "Hertta", "Ruutu", "Pata", "Risti" };
-            string[] numerot = { "ässä", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jätkä", "kuningatar", "kuningas" };
+            Console.Write("Mikä laji? 1 = pyöräily, 2 = painonnosto > ");
+            vastaus = Console.ReadLine();
 
-            foreach (string maa in maat)        // Jokaiselle maalle lisätään 13 korttia
+            bool tulos = int.TryParse(vastaus, out laji);
+
+            if (tulos)
             {
-                for (int i = 0; i <= 12; i++)
+                switch (laji)
                 {
-                    kortti.Add(new Kortti { Maa = maa, Numero = numerot[i] });
+                    case 1:
+                        Pyoraily pyoraily = new Pyoraily();
+                        pyoraily.Laji = "Pyöräily";
+
+                        Console.Write("Anna päivämäärä (p.kk.v) > ");
+                        pyoraily.Paivamaara = Console.ReadLine();
+
+                        Console.Write("Anna poljettu matka metreissä > ");
+                        pyoraily.Matka = int.Parse(Console.ReadLine());
+
+                        Console.Write("Anna käytetty aika minuuteissa > ");
+                        pyoraily.Aika = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine(pyoraily.ToString());
+                        break;
+
+                    case 2:
+                        Painonnosto painonnosto = new Painonnosto();
+                        painonnosto.Laji = "Painonnosto";
+
+                        Console.Write("Anna päivämäärä (p.kk.v) > ");
+                        painonnosto.Paivamaara = Console.ReadLine();
+
+                        Console.Write("Anna nostettu paino > ");
+                        painonnosto.Paino = int.Parse(Console.ReadLine());
+
+                        Console.Write("Anna toistojen määrä > ");
+                        painonnosto.Toisto = int.Parse(Console.ReadLine());
+
+                        Console.WriteLine(painonnosto.ToString());
+                        break;
+
+                    default:
+                        Console.WriteLine("Mene ulos siitä.");
+                        break;
                 }
             }
 
-            Console.WriteLine("Korttipakka: "); // Printataan koko roska näytölle
-            foreach (Kortti k in kortti)
-            {
-                Console.WriteLine(k.ToString());
-            }
-
-        }
-
-        /**********************************************
-        *        Tehtävä 4 - Pelaajien testausta      *
-        **********************************************/
-        static void TestaaPelaajat()
-        {
-            int valinta = 5;
-
-            Joukkue sakki = new Joukkue();
-            sakki.Kotikaupunki = "Jyväskylä";
-            sakki.Nimi = "JYP";
-
-            // Lisäillään muutama pelaaja
-            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Juho", Sukunimi = "Olkinuora", Ika = 26, Numero = 45 });
-            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Markus", Sukunimi = "Ruusu", Ika = 19, Numero = 97 });
-            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Pekka", Sukunimi = "Tuokkola", Ika = 33, Numero = 83 });
-            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Olli", Sukunimi = "Aitola", Ika = 24, Numero = 60 });
-            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Joona", Sukunimi = "Erving", Ika = 22, Numero = 53 });
-            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Niklas", Sukunimi = "Friman", Ika = 23, Numero = 20 });
-            sakki.LisaaPelaaja(new Pelaaja { Etunimi = "Jaakko", Sukunimi = "Jokinen", Ika = 23, Numero = 16 });
-
-            do
-            {
-                Console.WriteLine("Lopeta = 0 ");
-                Console.WriteLine("Lisää pelaaja = 1 ");
-                Console.WriteLine("Poista pelaaja = 2 ");
-                Console.WriteLine("Tulosta pelaajat = 3 ");
-                Console.Write("Anna valinta > ");
-                valinta = int.Parse(Console.ReadLine());
-
-                switch (valinta)
-                {
-                    case 1: // Lisää pelaaja
-
-                        Pelaaja hlo = new Pelaaja();
-
-                        Console.Write("Pelaajan etunimi > ");
-                        hlo.Etunimi = Console.ReadLine();
-
-                        Console.Write("Pelaajan sukunimi > ");
-                        hlo.Sukunimi = Console.ReadLine();
-
-                        Console.Write("Pelaajan ikä > ");
-                        hlo.Ika = int.Parse(Console.ReadLine());
-
-                        Console.Write("Pelaajan numero > ");
-                        hlo.Numero = int.Parse(Console.ReadLine());
-
-                        sakki.LisaaPelaaja(hlo);
-                        break;
-
-                    case 2: // Poista pelaaja
-                        Console.Write("Poistettavan pelaajan numero > ");
-                        int nro = int.Parse(Console.ReadLine());
-
-                        sakki.HaePelaajaNumerolla(nro);
-                        Console.Write("Löytyi {0}, poistetaanko? (k/e) > ", sakki.HaePelaajaNumerolla(nro));
-                        string poisto = Console.ReadLine();
-
-                        if (poisto == "e")
-                        { break; }
-
-                        if (poisto == "k")
-                        {
-                            sakki.PoistaPelaaja(nro);
-                            break;
-                        }
-
-                        else
-                        { break; }
-
-                        break;
-
-                    case 3: // Tulosta pelaajat
-                        Console.WriteLine("Joukkueen tiedot \nNimi: " + sakki.Nimi + "\nKotikaupunki: " + sakki.Kotikaupunki + "\nPelaajat: ");
-
-                        foreach (Pelaaja h in sakki.Tiimi)
-                        {
-                            Console.WriteLine("{0}", h.ToString());
-                        }
-                        break;
-
-                    case 0: // Lopeta
-                        Console.WriteLine("Lopetetaan..");
-                        break;
-
-                }
-            } while (valinta != 0);
+            else Console.WriteLine("Lopetetaan");
         }
     }
 }
