@@ -40,6 +40,13 @@ namespace JAMK.IT
         {
             try
             {
+                int arvo = 0;
+
+                Noppa dice = new Noppa { Arvo = 0 };
+
+                arvo = dice.HeitaNoppaa();
+
+                Console.WriteLine("Silmäluku: {0}", arvo);
 
             }
 

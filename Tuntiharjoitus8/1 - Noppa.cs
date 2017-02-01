@@ -29,5 +29,15 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
+    class Noppa
+    {
+        public int Arvo { get; set; }
 
+        public int HeitaNoppaa(int silmaluku)
+        {
+            Random rand = new Random();
+            silmaluku = rand.Next(1,6);
+            return silmaluku;
+        }
+    }
 }
