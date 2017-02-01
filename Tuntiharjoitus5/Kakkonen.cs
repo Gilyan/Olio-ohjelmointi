@@ -86,18 +86,21 @@ namespace JAMK.IT
         {
             nimet.Add(nimi);
         }
-        public int LaskeNimet(int maara)
+        public int LaskeNimet()
         {
-            maara = nimet.Count;
+            int maara = nimet.Count;
             return maara;
         }
-        public void LaskeKerrat()
+        public void LaskeErilaisetNimet()
         {
+            var maara = nimet.GroupBy(x => x)
+            .Select(g => new { Value = g.Key, Count = g.Count() });
 
+            //Console.WriteLine("Löytyi yhteensä {0} nimeä, joista {1} erilaista.", nimet.Count, maara.Count);
         }
         public void Jarjesta()
         {
-
+            nimet.Sort();
         }
         public override string ToString()
         {

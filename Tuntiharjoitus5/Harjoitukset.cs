@@ -36,21 +36,24 @@ namespace JAMK.IT.Harjoituksia
 
             string[] luettu = System.IO.File.ReadAllLines(mydocpath + @"\tehtava2.txt");
 
-                foreach (string line in luettu)
-                {
-                    nimi.LisaaNimi(new Nimi() { HaettuNimi = line });
-                }
+            foreach (string line in luettu)
+            {
+                nimi.LisaaNimi(new Nimi() { HaettuNimi = line });
+            }
 
-                //nimi.LaskeNimet();
-               // int maara = nimi.LaskeNimet();
-                //Console.WriteLine("Tiedostossa tehtava2.txt on {0} erilaista nimeä : ", maara);
+            int maara = nimi.LaskeNimet();
+            Console.WriteLine("Tiedostossa tehtava2.txt on yhteensä {0} nimeä", maara);
 
-                Console.Write("Tiedoston tehtava2.txt sisältö : ");    // Tulostetaan sisältö sellaisenaan
-                Console.WriteLine(nimi.ToString());
+            //nimi.LaskeErilaisetNimet();
 
-                Console.ReadLine();
-                Console.WriteLine("Tiedoston tehtava2.txt sisältö aakkostettuna: ");    // Tulostetaan sisältö aakkostettuna
+            //Console.Write("Tiedoston tehtava2.txt sisältö : ");    // Tulostetaan sisältö sellaisenaan
+            //Console.WriteLine(nimi.ToString());
 
+            //Console.ReadLine();
+            Console.WriteLine("Tiedoston tehtava2.txt sisältö aakkostettuna: ");    // Tulostetaan sisältö aakkostettuna
+
+            nimi.Jarjesta();
+            Console.WriteLine(nimi.ToString());
 
             /*catch (FileNotFoundException)
             {

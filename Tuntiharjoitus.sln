@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitukset", "Tuntiharjoitus\Tuntiharjoitukset.csproj", "{6E2C7FB1-0235-4B80-BBA4-901FD74B5E17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus3", "Tuntiharjoitus\Tuntiharjoitus3.csproj", "{6E2C7FB1-0235-4B80-BBA4-901FD74B5E17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus2", "Tuntiharjoitus2\Tuntiharjoitus2.csproj", "{0E09B7D3-2D6E-4AF5-B3E7-4606509703A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus4", "Tuntiharjoitus2\Tuntiharjoitus4.csproj", "{0E09B7D3-2D6E-4AF5-B3E7-4606509703A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus3", "Tuntiharjoitukset3\Tuntiharjoitus3.csproj", "{1B9776DE-E421-447A-886C-267CE911A402}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus5", "Tuntiharjoitukset3\Tuntiharjoitus5.csproj", "{1B9776DE-E421-447A-886C-267CE911A402}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus4", "Tuntiharjoitus4\Tuntiharjoitus4.csproj", "{553F63D4-1771-4EB2-92BA-547F8471084C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus6", "Tuntiharjoitus4\Tuntiharjoitus6.csproj", "{553F63D4-1771-4EB2-92BA-547F8471084C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus5", "Tuntiharjoitus5\Tuntiharjoitus5.csproj", "{1DE8969D-F200-4459-A46E-A00CE5A1EB9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus7", "Tuntiharjoitus5\Tuntiharjoitus7.csproj", "{1DE8969D-F200-4459-A46E-A00CE5A1EB9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tuntiharjoitus8", "Tuntiharjoitus8\Tuntiharjoitus8.csproj", "{21A8C980-AADD-4CBE-AE18-E77E7A59A3A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1DE8969D-F200-4459-A46E-A00CE5A1EB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DE8969D-F200-4459-A46E-A00CE5A1EB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DE8969D-F200-4459-A46E-A00CE5A1EB9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A8C980-AADD-4CBE-AE18-E77E7A59A3A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A8C980-AADD-4CBE-AE18-E77E7A59A3A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A8C980-AADD-4CBE-AE18-E77E7A59A3A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A8C980-AADD-4CBE-AE18-E77E7A59A3A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
