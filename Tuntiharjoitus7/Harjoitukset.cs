@@ -27,7 +27,7 @@ namespace JAMK.IT.Harjoituksia
                 //Tehtava1.Teht1();           // Tehtävä 1 - tehty
                 //TestaaKakkonen();           // Tehtävä 2 - tehty
                 //TestaaKolmonen();           // Tehtävä 3 - tehty
-                TestaaNelonen();           // Tehtävä 4 - tehty
+                TestaaNelonen();            // Tehtävä 4 - tehty
             }
 
             catch (Exception ex)
