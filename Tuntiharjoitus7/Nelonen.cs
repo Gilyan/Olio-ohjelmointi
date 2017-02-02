@@ -10,6 +10,8 @@ muutamia TV-ohjelmaolioita (tiedot voit alustaa suoraan koodista, ei tarvitse ky
 käyttäjältä) ja tallenna ne levylle. Mieti käytätkö jotain tietorakennetta apunasi. 
 Toteuta ohjelmaan myös tiedostonlukeminen ja tulosta TV-oliot näkyville.
 
+Harjoitellaan sarjallistamista (Serialization).
+
 Minttu Mäkäläinen K8517 @ JAMK 
 ************************************** */
 
@@ -22,12 +24,18 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
-    public class Tehtava4
+    [Serializable]          // Sarjallisestaan luokka, jotta voidaan kirjoittaa tiedostoon
+    class Ohjelma
     {
-        public static void Teht4()
+        public string OhjelmanNimi { get; set; }
+        public int Kanava { get; set; }
+        public string Alkuaika { get; set; }
+        public string Loppuaika { get; set; }
+        public string Infoteksti { get; set; }
+
+        public override string ToString()
         {
-            
+            return OhjelmanNimi + " alkaa kanavalla " + Kanava + " kello " + Alkuaika + " ja päättyy kello " + Loppuaika + ". Ohjelman kuvaus: " + Infoteksti;
         }
     }
-
 }

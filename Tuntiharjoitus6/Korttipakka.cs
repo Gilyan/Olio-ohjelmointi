@@ -24,5 +24,4 @@ namespace JAMK.IT
             return Maa + " " + Numero;
         }
     }
-
 }
