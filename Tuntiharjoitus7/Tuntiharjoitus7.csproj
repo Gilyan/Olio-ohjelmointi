@@ -47,7 +47,6 @@
     <Compile Include="Nelonen.cs" />
     <Compile Include="Kolmonen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Kakkonen.cs" />
     <Compile Include="Ykkönen.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,6 +10,9 @@ using JAMK.IT;                          // Helpottaa meidän luokkien löytämis
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace JAMK.IT.Harjoituksia
 {
@@ -17,10 +20,18 @@ namespace JAMK.IT.Harjoituksia
     {
         static void Main(string[] args)
         {
-            //Tehtava1.Teht1();           // Tehtävä 1 - tehty
-            TestaaKakkonen();           // Tehtävä 2 - 
-            //Tehtava3.Teht3();           // Tehtävä 3 - 
-            //Tehtava4.Teht4();           // Tehtävä 4 - 
+            try
+            {
+                //Tehtava1.Teht1();           // Tehtävä 1 - tehty
+                TestaaKakkonen();           // Tehtävä 2 - 
+                //Tehtava3.Teht3();           // Tehtävä 3 - 
+                //Tehtava4.Teht4();           // Tehtävä 4 - 
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         /**********************************************
@@ -28,37 +39,38 @@ namespace JAMK.IT.Harjoituksia
         **********************************************/
         static void TestaaKakkonen()
         {
-            string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            // Tee ohjelma, joka lukee yksinkertaisesta tekstitiedostosta henkilöitten nimiä ja 
+            // kertoo montako nimeä löytyy ja montako kertaa kukin nimi esiintyy. Ohjelmoi koodisi 
+            // tarkistamaan onko hakemistossa tiedostoa. Käytä File.Exist - metodia. Huomioi myös muut 
+            // mahdolliset poikkeukset, joita tiedoston käsittely voi aiheuttaa.
+            // Bonustehtävä: Lajittele nimet aakkosjärjestykseen ennen tulostusta.
 
-            Nimet nimi = new Nimet();
-
-            Console.WriteLine(File.Exists(mydocpath + @"\tehtava2.txt") ? "File exists." : "File does not exist.");
-
-            string[] luettu = System.IO.File.ReadAllLines(mydocpath + @"\tehtava2.txt");
-
-            foreach (string line in luettu)
+            try
             {
-                nimi.LisaaNimi(new Nimi() { HaettuNimi = line });
+                string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+                List<string> nimet = System.IO.File.ReadAllLines(mydocpath + @"\tehtava2.txt").ToList();
+
+                Console.WriteLine(File.Exists(mydocpath + @"\tehtava2.txt") ? "File exists." : "File does not exist.");
+
+                var maara = nimet
+                .GroupBy(x => x)
+                .Select(g => new { key = g.Key, count = g.Count() });
+
+                nimet.Sort();       // Lajitellaan nimet aakkosjärjestykseen
+
+                Console.WriteLine("Tiedostosta tehtava2 löytyi yhteensä {0} nimeä, joista {1} erilaista.", nimet.Count, maara.Count());
+
+                foreach (var group in maara)
+                {
+                    Console.WriteLine("Nimi {0} esiintyy {1} kertaa", group.key, group.count);
+                }
             }
 
-            int maara = nimi.LaskeNimet();
-            Console.WriteLine("Tiedostossa tehtava2.txt on yhteensä {0} nimeä", maara);
-
-            //nimi.LaskeErilaisetNimet();
-
-            //Console.Write("Tiedoston tehtava2.txt sisältö : ");    // Tulostetaan sisältö sellaisenaan
-            //Console.WriteLine(nimi.ToString());
-
-            //Console.ReadLine();
-            Console.WriteLine("Tiedoston tehtava2.txt sisältö aakkostettuna: ");    // Tulostetaan sisältö aakkostettuna
-
-            nimi.Jarjesta();
-            Console.WriteLine(nimi.ToString());
-
-            /*catch (FileNotFoundException)
+            catch (Exception ex)
             {
-                Console.WriteLine("Tiedostoa ei löydetty (FileNotFoundException)");
-            }*/
+                Console.WriteLine(ex.Message);
+            }
 
         }
     }

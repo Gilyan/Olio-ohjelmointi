@@ -44,7 +44,7 @@ namespace JAMK.IT
 
                 Noppa dice = new Noppa { Arvo = 0 };
 
-                arvo = dice.HeitaNoppaa();
+                //arvo = dice.HeitaNoppaa();
 
                 Console.WriteLine("Silmäluku: {0}", arvo);
 
