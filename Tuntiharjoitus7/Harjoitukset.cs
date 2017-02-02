@@ -167,15 +167,6 @@ namespace JAMK.IT.Harjoituksia
         **********************************************/
         static void TestaaNelonen()
         {
-            // Tee ohjelma, jossa voidaan käsitellä TV-ohjelmia. TV-ohjelman tietoina tulee käsitellä: 
-            // ohjelman nimi, kanava (jolta ohjelma tulee), alku- ja loppuaika sekä pienimuotoinen 
-            // infoteksti ohjelmasta. Luo pääohjelmassa muutamia TV-ohjelmaolioita (tiedot voit 
-            // alustaa suoraan koodista, ei tarvitse kysyä käyttäjältä) ja tallenna ne 
-            // levylle. Mieti käytätkö jotain tietorakennetta apunasi. Toteuta ohjelmaan myös 
-            // tiedostonlukeminen ja tulosta TV-oliot näkyville.
-
-            System.IO.StreamWriter outputFile = null;
-
             try
             {
                 string mydocpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
@@ -244,13 +235,6 @@ namespace JAMK.IT.Harjoituksia
                 Console.WriteLine(ex.Message);
             }
 
-            finally
-            {
-                if (outputFile != null)
-                {
-                    outputFile.Close();
-                }
-            }
         }
     }
 }
