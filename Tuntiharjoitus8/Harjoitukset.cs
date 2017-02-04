@@ -140,13 +140,17 @@ namespace JAMK.IT
                 jkl.LisaaKalastaja(fisherman);
 
                 // Luodaan kaloja
-                Kala haikala = new Kala { Laji = "Valkohai", Pituus = "7,5m", Paino = "1,8 tonnia" };
-                Kala valas = new Kala { Laji = "Miekkavalas", Pituus = "6,1m", Paino = "5,1 tonnia" };
-                Kala delfiini = new Kala { Laji = "Pullonokkadelfiini", Pituus = "2,9m", Paino = "280 kg" };
+                Kala haikala = new Kala { Laji = "Valkohai", Pituus = "7,5m", Paino = 1800 };
+                Kala valas = new Kala { Laji = "Miekkavalas", Pituus = "6,1m", Paino = 5100 };
+                Kala delfiini = new Kala { Laji = "Pullonokkadelfiini", Pituus = "2,9m", Paino = 280 };
 
                 jkl.LisaaKala(haikala);
                 jkl.LisaaKala(valas);
                 jkl.LisaaKala(delfiini);
+
+                Console.WriteLine(jkl.ToString());
+
+
 
                 Console.WriteLine(jkl.ToString());
             }

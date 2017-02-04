@@ -57,11 +57,11 @@ namespace JAMK.IT
     {
         public string Laji { get; set; }
         public string Pituus { get; set; }
-        public string Paino { get; set; }
+        public int Paino { get; set; }
 
         public override string ToString()
         {
-            return Laji + ", pituus " + Pituus + ", paino " + Paino;
+            return Laji + ", pituus " + Pituus + ", paino " + Paino + "kg";
         }
     }
 
