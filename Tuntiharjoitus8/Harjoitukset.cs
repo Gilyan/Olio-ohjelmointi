@@ -149,10 +149,6 @@ namespace JAMK.IT
                 jkl.LisaaKala(delfiini);
 
                 Console.WriteLine(jkl.ToString());
-
-
-
-                Console.WriteLine(jkl.ToString());
             }
 
             catch (Exception ex)

@@ -1,16 +1,14 @@
 ﻿/* **************************************
 Kertaamista.
 
-Toiminta: Toteuta sovellus, jossa voit hallita kalastukseen liittyviä tietoja. Ohjelman pitää 
-pystyä käsittelemään: saadun kalan perustiedot 
-(laji, pituus ja paino)
-kalastajan perustiedot (nimi, puhelinnumero)
-saadun kalapaikan perustiedot (nimi ja paikka). 
+Toiminta: Toteuta sovellus, jossa voit hallita kalastukseen liittyviä tietoja. 
+Ohjelman pitää pystyä käsittelemään: 
+- saadun kalan perustiedot (laji, pituus ja paino)
+- kalastajan perustiedot (nimi, puhelinnumero)
+- saadun kalapaikan perustiedot (nimi ja paikka). 
 
 Pohdi tarvittava luokkarakenne UML-kaaviona. Toteuta pääohjelmassa kalastaja ja muutamia kaloja. 
 Tulosta lopuksi kalarekisterin sisältö.
-
-Tulosta kalarekisteri siten, että kalat ovat suuruusjärjestykessä (painavin ensin).
 
 Esimerkkitulostus:
 
