@@ -27,5 +27,44 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
+    class Tuote
+    {
+        public string Nimi { get; set; }
+        public double Hinta { get; set; }
 
+        public override string ToString()
+        {
+            return Nimi + " " + Hinta + " e";
+        }
+    }
+
+    class Ostoskori
+    {
+        private List<Tuote> tuotteet;
+
+        public List<Tuote> Kori
+        {
+            get { return tuotteet; }
+        }
+
+        public Ostoskori()
+        {
+            tuotteet = new List<Tuote>();
+        }
+
+        public void LisaaTuote(Tuote item)
+        {
+            tuotteet.Add(item);
+        }
+
+        public override string ToString()
+        {
+            string tulosta = "Ostoskorin sisältö";
+            foreach (Tuote h in Kori)
+            {
+                tulosta += "\n- " + h.ToString();
+            }
+            return tulosta;
+        }
+    }
 }

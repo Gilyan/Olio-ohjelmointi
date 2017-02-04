@@ -53,5 +53,73 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
+    class Kala
+    {
+        public string Laji { get; set; }
+        public string Pituus { get; set; }
+        public string Paino { get; set; }
 
+        public override string ToString()
+        {
+            return Laji + ", pituus " + Pituus + ", paino " + Paino;
+        }
+    }
+
+    class Kalastaja
+    {
+        public string Nimi { get; set; }
+        public string Puhelinnumero { get; set; }
+
+        public override string ToString()
+        {
+            return Nimi + ", " + Puhelinnumero;
+        }
+    }
+
+    class Kalapaikka
+    {
+        public string Nimi { get; set; }
+        public string Sijainti { get; set; }
+
+        public override string ToString()
+        {
+            return Nimi + ", " + Sijainti;
+        }
+    }
+
+    class Kalareissu
+    {
+        public List<Kala> Kalat = new List<Kala>();
+        public Kalastaja KukaKalasti = new Kalastaja();
+        public Kalapaikka Paikka = new Kalapaikka();
+
+        public void LisaaKala(Kala fisu)
+        {
+            Kalat.Add(fisu);
+            Console.WriteLine("{0} sai kalan {1}", KukaKalasti.Nimi, fisu);
+        }
+
+        public void LisaaKalastaja(Kalastaja fisustaja)
+        {
+            this.KukaKalasti = fisustaja;
+            Console.WriteLine("Kalajastaja {0} lisätty.", KukaKalasti.Nimi);
+        }
+
+        public void LisaaSijainti(Kalapaikka lokaatio)
+        {
+            this.Paikka = lokaatio;
+            Console.WriteLine("Sijainti: {0}, {1}", Paikka.Nimi, Paikka.Sijainti);
+        }
+
+        public override string ToString()
+        {
+            string tulosta = "\nKALAREISSUN TIEDOT \n" + Paikka;
+            tulosta += "\n" + KukaKalasti + " sai seuraavia kaloja: ";
+            foreach (Kala r in Kalat)
+            {
+                if (r != null) tulosta += "\n- " + r.ToString();
+            }
+            return tulosta;
+        }
+    }
 }

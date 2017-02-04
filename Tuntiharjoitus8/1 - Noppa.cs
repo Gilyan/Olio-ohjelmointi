@@ -33,10 +33,11 @@ namespace JAMK.IT
     {
         public int Arvo { get; set; }
 
-        public int HeitaNoppaa(int silmaluku)
+        Random rand = new Random();
+
+        public int HeitaNoppaa()
         {
-            Random rand = new Random();
-            silmaluku = rand.Next(1,6);
+            int silmaluku = rand.Next(1,7);
             return silmaluku;
         }
     }
