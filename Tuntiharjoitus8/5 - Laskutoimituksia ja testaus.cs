@@ -40,12 +40,7 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
-    class Numero
-    {
-        public double Arvo { get; set; }
-    }
-
-    class ArrayCalcs
+    public class ArrayCalcs
     {
         static public double Sum(double[] summa)
         {
