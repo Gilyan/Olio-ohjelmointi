@@ -57,5 +57,48 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
+    public class Ostos
+    {
+        public string Nimi { get; set; }
+        public double Hinta { get; set; }
+        public int Maara { get; set; }
+        public double Yhteensa => (Hinta * Maara);
 
+        public override string ToString()
+        {
+            return Maara + " x " + Nimi + " " + Hinta + " e/kpl - yhteensä " + Yhteensa + " e";
+        }
+    }
+
+    public class Kauppareissu
+    {
+        public string Nimi { get; set; }
+        public List<Ostos> Ostokset = new List<Ostos>();
+        public double Loppusumma => LaskeLoppusumma();
+
+        public void LisaaTuote(Ostos item)
+        {
+            Ostokset.Add(item);
+        }
+
+        public double LaskeLoppusumma()
+        {
+            double yhteensa = 0;
+
+            yhteensa += Ostokset.Sum(ostos => ostos.Yhteensa);
+
+            return yhteensa;
+        }
+
+        public override string ToString()
+        {
+            string tulosta = Nimi + " - lasku: ";
+            foreach (Ostos h in Ostokset)
+            {
+                tulosta += "\n- " + h.ToString();
+            }
+            tulosta += "\nLoppusumma yhteensä " + Loppusumma + " euroa";
+            return tulosta;
+        }
+    }
 }

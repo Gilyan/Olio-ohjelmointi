@@ -22,9 +22,9 @@ namespace JAMK.IT
                 //TestaaNoppa();              // Tehtävä 1 - tehty
                 //TestaaOstokset();           // Tehtävä 2 - tehty
                 //TestaaKalat();              // Tehtävä 3 - tehty
-                //TestaaKuviot();             // Tehtävä 4 - 
-                TestaaLaskutoimitukset();   // Tehtävä 5 - 
-                //TestaaOstoksetJaTestaus();  // Tehtävä 6 - 
+                //TestaaKuviot();             // Tehtävä 4 - tehty
+                //TestaaLaskutoimitukset();   // Tehtävä 5 - tehty
+                TestaaOstoksetJaTestaus();  // Tehtävä 6 - 
             }
 
             catch (Exception ex)
@@ -252,7 +252,18 @@ namespace JAMK.IT
             try
             {
 
+                Kauppareissu maijaShoppaa = new Kauppareissu();
 
+                maijaShoppaa.Nimi = "Maija Mehiläinen";
+
+                maijaShoppaa.LisaaTuote(new Ostos { Nimi = "Maitopurkki 1l", Hinta = 1.45, Maara = 2 });
+                maijaShoppaa.LisaaTuote(new Ostos { Nimi = "Jauheliha 400g", Hinta = 3.85, Maara = 1 });
+                maijaShoppaa.LisaaTuote(new Ostos { Nimi = "Spagetti 1kg", Hinta = 1.00, Maara = 3 });
+                maijaShoppaa.LisaaTuote(new Ostos { Nimi = "Talouspaperi", Hinta = 4.35, Maara = 1 });
+                maijaShoppaa.LisaaTuote(new Ostos { Nimi = "Shampoo 200ml", Hinta = 3.20, Maara = 2 });
+                maijaShoppaa.LisaaTuote(new Ostos { Nimi = "Fazer Sininen 250g", Hinta = 2.20, Maara = 5 });
+
+                Console.WriteLine(maijaShoppaa.ToString());
             }
 
             catch (Exception ex)
