@@ -22,8 +22,8 @@ namespace JAMK.IT
                 //TestaaNoppa();              // Tehtävä 1 - tehty
                 //TestaaOstokset();           // Tehtävä 2 - tehty
                 //TestaaKalat();              // Tehtävä 3 - tehty
-                TestaaKuviot();             // Tehtävä 4 - 
-                //TestaaLaskutoimitukset();   // Tehtävä 5 - 
+                //TestaaKuviot();             // Tehtävä 4 - 
+                TestaaLaskutoimitukset();   // Tehtävä 5 - 
                 //TestaaOstoksetJaTestaus();  // Tehtävä 6 - 
             }
 
@@ -164,6 +164,7 @@ namespace JAMK.IT
         {
             try
             {
+                // Tehdään pari neliötä
                 Rectangle nelio1 = new Rectangle(10.0, 20.0);
                 nelio1.Nimi = "Neliö 1";
                 nelio1.Area();
@@ -174,6 +175,12 @@ namespace JAMK.IT
                 nelio2.Area();
                 nelio2.Circumference();
 
+                Rectangle nelio3 = new Rectangle(50.4, 6.8);
+                nelio3.Nimi = "Neliö 3";
+                nelio3.Area();
+                nelio3.Circumference();
+
+                // Tehdään pari ympyrää
                 Circle ympyra1 = new Circle(1.0);
                 ympyra1.Nimi = "Ympyrä 1";
                 ympyra1.Area();
@@ -184,13 +191,22 @@ namespace JAMK.IT
                 ympyra2.Area();
                 ympyra2.Circumference();
 
+                Circle ympyra3 = new Circle(10);
+                ympyra3.Nimi = "Ympyrä 3";
+                ympyra3.Area();
+                ympyra3.Circumference();
+
+                // Lisätään tehdyt kuviot listaan
                 Shapes kuviot = new Shapes();
 
                 kuviot.LisaaKuvio(nelio1);
                 kuviot.LisaaKuvio(nelio2);
+                kuviot.LisaaKuvio(nelio3);
                 kuviot.LisaaKuvio(ympyra1);
                 kuviot.LisaaKuvio(ympyra2);
+                kuviot.LisaaKuvio(ympyra3);
 
+                // Tulostetaan listan sisältö näytölle
                 Console.WriteLine(kuviot.ToString());
             }
 
@@ -207,8 +223,19 @@ namespace JAMK.IT
         {
             try
             {
+                double[] array = { 1.0, 2.0, 3.3, 5.5, 6.3, -4.5, 12.0 };
 
+                Console.Write("Numerot ovat :");
+                for (int i = 0; i < array.Length; i++)
+                {
+                    Console.Write(" {0}  ", array[i]);
+                }
+                Console.WriteLine();
 
+                Console.WriteLine("Keskiarvo : {0:F2}", ArrayCalcs.Average(array));
+                Console.WriteLine("Pienin luku : {0:F2}", ArrayCalcs.Min(array));
+                Console.WriteLine("Suurin luku : {0:F2}", ArrayCalcs.Max(array));
+                Console.WriteLine("Kaikki yhteentä : {0:F2}", ArrayCalcs.Sum(array));
             }
 
             catch (Exception ex)

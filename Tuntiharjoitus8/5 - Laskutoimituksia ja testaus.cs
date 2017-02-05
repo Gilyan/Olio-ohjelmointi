@@ -40,5 +40,31 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
+    class Numero
+    {
+        public double Arvo { get; set; }
+    }
 
+    class ArrayCalcs
+    {
+        static public double Sum(double[] summa)
+        {
+            return summa.Sum();
+        }
+
+        static public double Average(double[] summa)
+        {
+            return summa.Average();
+        }
+
+        static public double Min(double[] summa)
+        {
+            return summa.Min();
+        }
+
+        static public double Max(double[] summa)
+        {
+            return summa.Max();
+        }
+    }
 }

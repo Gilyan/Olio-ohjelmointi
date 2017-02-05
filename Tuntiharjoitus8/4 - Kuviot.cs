@@ -69,6 +69,7 @@ namespace JAMK.IT
     {
         double Pituus { get; set; }
         double Leveys { get; set; }
+        double ala, ymparysmitta;
 
         public Rectangle(double pituus, double leveys)
         {
@@ -78,23 +79,26 @@ namespace JAMK.IT
 
         public override void Area()
         {
-            double tulos = Pituus * Leveys;
+            ala = Pituus * Leveys;
+            ala = Math.Round(ala, 2);
         }
 
         public override void Circumference()
         {
-            double tulos = 2*Pituus + 2*Leveys;
+            ymparysmitta = 2*Pituus + 2*Leveys;
+            ymparysmitta = Math.Round(ymparysmitta, 2);
         }
 
         public override string ToString()
         {
-            return base.ToString() + ", pituus: " + Pituus + ", leveys: " + Leveys;
+            return base.ToString() + ", pituus: " + Pituus + ", leveys: " + Leveys + ", pinta-ala: " + ala + ", ympärys: " + ymparysmitta;
         }
     }
 
     class Circle : Shape        // Ympyrä - aliluokka
     {
         public double Sade { get; set; }
+        double ala, ymparysmitta;
 
         public Circle(double sade)
         {
@@ -103,17 +107,19 @@ namespace JAMK.IT
 
         public override void Area()                 // Pinta-ala = πr^2
         {
-            double tulos = (Math.PI * Math.Pow(Sade, 2));
+            ala = (Math.PI * Math.Pow(Sade, 2));
+            ala = Math.Round(ala, 2);
         }
 
         public override void Circumference()        // Piirin pituus = 2πr
         {
-            double tulos = 2 * Math.PI * Sade;
+            ymparysmitta = 2 * Math.PI * Sade;
+            ymparysmitta = Math.Round(ymparysmitta, 2);
         }
 
         public override string ToString()
         {
-            return base.ToString() + ", säde: " + Sade;
+            return base.ToString() + ", säde: " + Sade + ", pinta-ala: " + ala + ", ympärys: " + ymparysmitta;
         }
     }
 
