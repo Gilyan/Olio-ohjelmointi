@@ -33,5 +33,89 @@ using System.Threading.Tasks;
 
 namespace JAMK.IT
 {
+    abstract class Shape        // Kuvio - pääluokka
+    {
+        public string Nimi { get; set; }
+        public abstract void Area();            // Abstrakti metodi, pinta-ala
+        public abstract void Circumference();   // Abstrakti metodi, ympärysmitta
+
+        public override string ToString()
+        {
+            return "Kuvio: " + Nimi;
+        }
+    }
+
+    class Shapes        // Kuvioille lista
+    {
+        public List<Shape> Kuviot = new List<Shape>();
+
+        public void LisaaKuvio(Shape kuvio)
+        {
+            Kuviot.Add(kuvio);
+        }
+
+        public override string ToString()
+        {
+            string tulosta = "Listassa on nämä kuviot: ";
+            foreach (Shape r in Kuviot)
+            {
+                if (r != null) tulosta += "\n- " + r.ToString();
+            }
+            return tulosta;
+        }
+    }
+
+    class Rectangle : Shape     // Neliö - aliluokka
+    {
+        double Pituus { get; set; }
+        double Leveys { get; set; }
+
+        public Rectangle(double pituus, double leveys)
+        {
+            Pituus = pituus;
+            Leveys = leveys;
+        }
+
+        public override void Area()
+        {
+            double tulos = Pituus * Leveys;
+        }
+
+        public override void Circumference()
+        {
+            double tulos = 2*Pituus + 2*Leveys;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + ", pituus: " + Pituus + ", leveys: " + Leveys;
+        }
+    }
+
+    class Circle : Shape        // Ympyrä - aliluokka
+    {
+        public double Sade { get; set; }
+
+        public Circle(double sade)
+        {
+            Sade = sade;
+        }
+
+        public override void Area()                 // Pinta-ala = πr^2
+        {
+            double tulos = (Math.PI * Math.Pow(Sade, 2));
+        }
+
+        public override void Circumference()        // Piirin pituus = 2πr
+        {
+            double tulos = 2 * Math.PI * Sade;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + ", säde: " + Sade;
+        }
+    }
+
 
 }

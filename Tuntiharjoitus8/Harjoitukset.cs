@@ -21,8 +21,8 @@ namespace JAMK.IT
             {
                 //TestaaNoppa();              // Tehtävä 1 - tehty
                 //TestaaOstokset();           // Tehtävä 2 - tehty
-                TestaaKalat();              // Tehtävä 3 - tehty
-                //TestaaKuviot();             // Tehtävä 4 - 
+                //TestaaKalat();              // Tehtävä 3 - tehty
+                TestaaKuviot();             // Tehtävä 4 - 
                 //TestaaLaskutoimitukset();   // Tehtävä 5 - 
                 //TestaaOstoksetJaTestaus();  // Tehtävä 6 - 
             }
@@ -149,6 +149,83 @@ namespace JAMK.IT
                 jkl.LisaaKala(delfiini);
 
                 Console.WriteLine(jkl.ToString());
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /**********************************************
+        *     Tehtävä 4 - Kuviotehtävän testausta     *
+        **********************************************/
+        static void TestaaKuviot()
+        {
+            try
+            {
+                Rectangle nelio1 = new Rectangle(10.0, 20.0);
+                nelio1.Nimi = "Neliö 1";
+                nelio1.Area();
+                nelio1.Circumference();
+
+                Rectangle nelio2 = new Rectangle(25.0, 35.0);
+                nelio2.Nimi = "Neliö 2";
+                nelio2.Area();
+                nelio2.Circumference();
+
+                Circle ympyra1 = new Circle(1.0);
+                ympyra1.Nimi = "Ympyrä 1";
+                ympyra1.Area();
+                ympyra1.Circumference();
+
+                Circle ympyra2 = new Circle(3.5);
+                ympyra2.Nimi = "Ympyrä 2";
+                ympyra2.Area();
+                ympyra2.Circumference();
+
+                Shapes kuviot = new Shapes();
+
+                kuviot.LisaaKuvio(nelio1);
+                kuviot.LisaaKuvio(nelio2);
+                kuviot.LisaaKuvio(ympyra1);
+                kuviot.LisaaKuvio(ympyra2);
+
+                Console.WriteLine(kuviot.ToString());
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /**********************************************
+        *   Tehtävä 5 - Laskutoimituksien testausta   *
+        **********************************************/
+        static void TestaaLaskutoimitukset()
+        {
+            try
+            {
+
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /**********************************************
+        *  Tehtävä 6 - Toisen ostostehtävän testausta *
+        **********************************************/
+        static void TestaaOstoksetJaTestaus()
+        {
+            try
+            {
+
+
             }
 
             catch (Exception ex)
