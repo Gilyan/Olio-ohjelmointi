@@ -23,8 +23,8 @@ namespace JAMK.IT
                 //TestaaOstokset();           // Tehtävä 2 - tehty
                 //TestaaKalat();              // Tehtävä 3 - tehty
                 //TestaaKuviot();             // Tehtävä 4 - tehty
-                //TestaaLaskutoimitukset();   // Tehtävä 5 - tehty
-                TestaaOstoksetJaTestaus();  // Tehtävä 6 - tehty
+                TestaaLaskutoimitukset();   // Tehtävä 5 - tehty
+                //TestaaOstoksetJaTestaus();  // Tehtävä 6 - tehty
             }
 
             catch (Exception ex)

@@ -42,24 +42,24 @@ namespace JAMK.IT
 {
     public class ArrayCalcs
     {
-        static public double Sum(double[] summa)
+        static public double Sum(double[] array)
         {
-            return summa.Sum();
+            return array.Sum();
         }
 
-        static public double Average(double[] summa)
+        static public double Average(double[] array)
         {
-            return summa.Average();
+            return array.Average();
         }
 
-        static public double Min(double[] summa)
+        static public double Min(double[] array)
         {
-            return summa.Min();
+            return array.Min();
         }
 
-        static public double Max(double[] summa)
+        static public double Max(double[] array)
         {
-            return summa.Max();
+            return array.Max();
         }
     }
 }
